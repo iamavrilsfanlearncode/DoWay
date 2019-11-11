@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">DoWay</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">農村小吃</string>
+    <string name="title_dashboard">民宿</string>
+    <string name="title_notifications">觀光活動</string>
 </resources>

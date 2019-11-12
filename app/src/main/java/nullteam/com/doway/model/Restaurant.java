@@ -1,7 +1,8 @@
-package nullteam.com.doway.Model;
+package nullteam.com.doway.model;
 
 public class Restaurant {
     /**
+     * OPEN API :  https://data.gov.tw/dataset/7778
      * ID : 01_100
      * Name : 湖莓宴餐坊
      * Address : 苗栗縣大湖鄉富興村八寮彎2-7號4樓

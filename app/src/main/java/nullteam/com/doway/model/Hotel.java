@@ -1,7 +1,8 @@
-package nullteam.com.doway.Model;
+package nullteam.com.doway.model;
 
 public class Hotel {
     /**
+     * OPEN API : https://data.gov.tw/dataset/7780
      * Id : C4_315080000H_000008
      * Name : 思源居民宿
      * Description : 位於南投縣的民宿

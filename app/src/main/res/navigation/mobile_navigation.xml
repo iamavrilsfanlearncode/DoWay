@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_restaurant">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="nullteam.com.doway.Fragment.HomeFragment"
+        android:id="@+id/navigation_restaurant"
+        android:name="nullteam.com.doway.fragment.RestaurantFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_restaurant" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="nullteam.com.doway.Fragment.DashboardFragment"
+        android:id="@+id/navigation_hotel"
+        android:name="nullteam.com.doway.fragment.HotelFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_hotel" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="nullteam.com.doway.Fragment.NotificationsFragment"
+        android:id="@+id/navigation_activityinfo"
+        android:name="nullteam.com.doway.fragment.ActivityInfoFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_activityinfo" />
 </navigation>

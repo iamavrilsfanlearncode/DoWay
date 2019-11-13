@@ -1,5 +1,7 @@
 package nullteam.com.doway;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
@@ -19,6 +21,8 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import static android.content.ContentValues.TAG;
 
 // 負責發出網路請求，取得OpenData
 public class OpenDataService {
@@ -72,19 +76,7 @@ public class OpenDataService {
 
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                /*
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            ProgressingDialog.closeDialog();
-                            ProgressingDialog.noNetwork();
-                        } catch (Exception ignored) {
-
-                        }
-                    }
-                });
-                 */
+                Log.d(TAG, "onFailure: " + e.getMessage());
             }
         });
     }

@@ -44,6 +44,7 @@ public class RestaurantFragment extends Fragment {
                     public void run() {
                         if (result != null) {
                             adapter.setDatas(result);
+                            adapter.notifyDataSetChanged();
                         }
                     }
                 });

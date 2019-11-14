@@ -3,6 +3,7 @@ package nullteam.com.doway.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.nameTextView.setText(datas.get(position).getName());
         holder.addressTextView.setText(datas.get(position).getAddress());
         holder.telTextView.setText(datas.get(position).getTel());
+
      }
 
     @Override
@@ -48,12 +50,14 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, telTextView, addressTextView;
+        ImageView picImageView;
 
         public ViewHolder(View view) {
             super(view);
             nameTextView = view.findViewById(R.id.Name);
             telTextView = view.findViewById(R.id.Tel);
             addressTextView = view.findViewById(R.id.Address);
+            picImageView = view.findViewById(R.id.Pic);
         }
     }
 }

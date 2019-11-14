@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="1080"
+    android:pivotX="50%"
+    android:pivotY="50%">
+
+    <shape
+        android:shape="ring"
+        android:useLevel="false">
+
+        <padding
+            android:bottom="5dp"
+            android:left="5dp"
+            android:right="5dp"
+            android:top="5dp" />
+
+    </shape>
+
+</rotate>

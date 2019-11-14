@@ -29,13 +29,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/Pic"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/img"/>
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/test_green" />
 
         </LinearLayout>
 

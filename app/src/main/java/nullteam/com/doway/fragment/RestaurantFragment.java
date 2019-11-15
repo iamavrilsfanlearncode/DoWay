@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import nullteam.com.doway.OpenDataService;
 import nullteam.com.doway.R;
+import nullteam.com.doway.Utils.DialogHelper;
 import nullteam.com.doway.adapter.RestaurantAdapter;
 import nullteam.com.doway.model.Restaurant;
 
@@ -28,14 +29,13 @@ public class RestaurantFragment extends Fragment {
 
         listView = root.findViewById(R.id.restaurant_List);
         ArrayList<Restaurant> result = new ArrayList<Restaurant>();
-        Restaurant obj = new Restaurant();
         adapter = new RestaurantAdapter(result);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         listView.setLayoutManager(layoutManager);
         listView.setAdapter(adapter);
 
-
+        DialogHelper.showProgressDialog(getActivity(), "更新餐廳列表");
         OpenDataService.getInstance().GetRestaurant(new OpenDataService.GetRestaurantResponse(){
             @Override
             public void onResponse(final ArrayList<Restaurant> result) {
@@ -48,6 +48,7 @@ public class RestaurantFragment extends Fragment {
                         }
                     }
                 });
+                DialogHelper.closeProgressDialog();
             }
         });
 

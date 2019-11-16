@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
@@ -15,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import nullteam.com.doway.model.ActivityInfo;
+import nullteam.com.doway.model.Hotel;
 import nullteam.com.doway.model.Restaurant;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -97,11 +101,59 @@ public class OpenDataService {
         });
     }
 
+    public void GetHotel(final GetHotelResponse callback) {
+        GetJson("https://data.tycg.gov.tw/api/v1/rest/datastore/c3340a19-9219-498a-9a46-21de506ba85b?format=json", new CallbackResponse() {
+            @Override
+            public void onResponse(String result) {
+                JsonParser parser = new JsonParser();
+                ArrayList<Hotel> datas = null;
+                JsonObject root = parser.parse(result).getAsJsonObject();
+
+                JsonArray arrayResults = root.getAsJsonObject("result").getAsJsonArray("records");
+
+                if (arrayResults != null) {
+                    Gson gson = new Gson();
+                    Type collectionType = new TypeToken<List<Hotel>>() { }.getType();
+                    datas = gson.fromJson(arrayResults, collectionType);
+                }
+                callback.onResponse(datas);
+            }
+        });
+    }
+
+    public void GetActivityInfo(final GetActivityInfoResponse callback) {
+        GetJson("https://data.tycg.gov.tw/api/v1/rest/datastore/3983e8e8-7a67-4bbd-b976-bb0cdb97e2f7?format=json", new CallbackResponse() {
+            @Override
+            public void onResponse(String result) {
+                JsonParser parser = new JsonParser();
+                ArrayList<ActivityInfo> datas = null;
+                JsonObject root = parser.parse(result).getAsJsonObject();
+
+                JsonArray arrayResults = root.getAsJsonObject("result").getAsJsonArray("records");
+
+                if (arrayResults != null) {
+                    Gson gson = new Gson();
+                    Type collectionType = new TypeToken<List<ActivityInfo>>() { }.getType();
+                    datas = gson.fromJson(arrayResults, collectionType);
+                }
+                callback.onResponse(datas);
+            }
+        });
+    }
+
     public interface CallbackResponse {
         void onResponse(String result);
     }
 
     public interface GetRestaurantResponse {
         void onResponse(ArrayList<Restaurant> result);
+    }
+
+    public interface GetHotelResponse {
+        void onResponse(ArrayList<Hotel> result);
+    }
+
+    public interface GetActivityInfoResponse {
+        void onResponse(ArrayList<ActivityInfo> result);
     }
 }

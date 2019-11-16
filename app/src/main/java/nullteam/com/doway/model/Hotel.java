@@ -1,130 +1,60 @@
 package nullteam.com.doway.model;
 
 public class Hotel {
+
     /**
-     * OPEN API : https://data.gov.tw/dataset/7780
-     * Id : C4_315080000H_000008
-     * Name : 思源居民宿
-     * Description : 位於南投縣的民宿
-     * Grade : 0
-     * Add : 南投縣埔里鎮水頭里水頭路1號
-     * Zipcode : 545
-     * Region : 南投縣
-     * Town : 埔里鎮
-     * Tel : 886-49-2927101
-     * Fax : 886--
-     * Gov : 315080000H
-     * Website :
-     * Picture1 : https://taiwan.taiwanstay.net.tw/twpic/15545.jpg
-     * Picdescribe1 : 外觀
-     * Picture2 :
-     * Picdescribe2 :
-     * Picture3 :
-     * Picdescribe3 :
-     * Px : 120.970365
-     * Py : 23.935199
-     * Class : 4
-     * Map :
-     * Spec :
-     * Serviceinfo :
-     * Parkinginfo : 車位:小客車0輛、機車0輛、大客車0輛
+     * API URL : https://data.tycg.gov.tw/api/v1/rest/datastore/c3340a19-9219-498a-9a46-21de506ba85b?format=json
+     * Website : http://www.monarch-hotels.com.tw/
+     * Changetime : 2019/11/01 11:15:23
+     * Fax : 886-3-3179000
+     * Opentime : 無
+     * Tel : 886-3-3169900
+     * Name : 尊爵大飯店
+     * Px : 121.29780
+     * Py : 25.02451
+     * Toldescribe : 面對世界的平台，桃園儼然成為台灣邁向世界的起點。身為國家門戶，桃園啟動全力，投入十二重要建設，積極發展交通、觀光文化等產業建設，緊密的結合時代脈動並全面勾勒出桃園一國際大都會格局，在國內多位重量級企業領袖紛紛入主桃園，共同成就這片美麗土地的蓬勃面貌。尊爵大飯店以前瞻性的眼光，立足桃園、在地深耕；以世界的視野來考量自己所扮演的角色，肩負起台灣對外發聲的第一線使命，不斷挑戰無限可能，創造超越國界的人文價值。&nbsp;飯店位置：鄰近桃園國際機場與南崁交流道，座落於桃園市桃園區，為桃園區第一家全功能的國際飯店。來往交通：距離桃園國際機場15公里，車程約20分鐘。距離高鐵(桃園青埔站)，車程約15分鐘。距離桃園區中心3公里，車程約5分鐘。距離南崁交流道，車程約5分鐘。&nbsp;停車資訊: B1-B2附設停車場
+     * Charge : 6300 ~ 19000
+     * InfoId : 74
+     * Zipcode : 330
+     * Add : 330 桃園市桃園區莊敬路一段300號
+     * Remarks :
+     * _id : 1
+     * Parkinginfo : 附設停車場
+     * TYWebsite : travel.tycg.gov.tw/zh-tw/Accommodation/Detail/74
      */
 
-    private String Id;
-    private String Name;
-    private String Description;
-    private String Grade;
-    private String Add;
-    private String Zipcode;
-    private String Region;
-    private String Town;
-    private String Tel;
-    private String Fax;
-    private String Gov;
     private String Website;
-    private String Picture1;
-    private String Picdescribe1;
-    private String Picture2;
-    private String Picdescribe2;
-    private String Picture3;
-    private String Picdescribe3;
-    private double Px;
-    private double Py;
-    private String Map;
-    private String Spec;
-    private String Serviceinfo;
+    private String Changetime;
+    private String Fax;
+    private String Opentime;
+    private String Tel;
+    private String Name;
+    private String Px;
+    private String Py;
+    private String Toldescribe;
+    private String Charge;
+    private String InfoId;
+    private String Zipcode;
+    private String Add;
+    private String Remarks;
+    private int _id;
     private String Parkinginfo;
+    private String TYWebsite;
 
-    public String getId() {
-        return Id;
+    public String getWebsite() {
+        return Website;
     }
 
-    public void setId(String Id) {
-        this.Id = Id;
+    public void setWebsite(String Website) {
+        this.Website = Website;
     }
 
-    public String getName() {
-        return Name;
+    public String getChangetime() {
+        return Changetime;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String Description) {
-        this.Description = Description;
-    }
-
-    public String getGrade() {
-        return Grade;
-    }
-
-    public void setGrade(String Grade) {
-        this.Grade = Grade;
-    }
-
-    public String getAdd() {
-        return Add;
-    }
-
-    public void setAdd(String Add) {
-        this.Add = Add;
-    }
-
-    public String getZipcode() {
-        return Zipcode;
-    }
-
-    public void setZipcode(String Zipcode) {
-        this.Zipcode = Zipcode;
-    }
-
-    public String getRegion() {
-        return Region;
-    }
-
-    public void setRegion(String Region) {
-        this.Region = Region;
-    }
-
-    public String getTown() {
-        return Town;
-    }
-
-    public void setTown(String Town) {
-        this.Town = Town;
-    }
-
-    public String getTel() {
-        return Tel;
-    }
-
-    public void setTel(String Tel) {
-        this.Tel = Tel;
+    public void setChangetime(String Changetime) {
+        this.Changetime = Changetime;
     }
 
     public String getFax() {
@@ -135,108 +65,100 @@ public class Hotel {
         this.Fax = Fax;
     }
 
-    public String getGov() {
-        return Gov;
+    public String getOpentime() {
+        return Opentime;
     }
 
-    public void setGov(String Gov) {
-        this.Gov = Gov;
+    public void setOpentime(String Opentime) {
+        this.Opentime = Opentime;
     }
 
-    public String getWebsite() {
-        return Website;
+    public String getTel() {
+        return Tel;
     }
 
-    public void setWebsite(String Website) {
-        this.Website = Website;
+    public void setTel(String Tel) {
+        this.Tel = Tel;
     }
 
-    public String getPicture1() {
-        return Picture1;
+    public String getName() {
+        return Name;
     }
 
-    public void setPicture1(String Picture1) {
-        this.Picture1 = Picture1;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public String getPicdescribe1() {
-        return Picdescribe1;
-    }
-
-    public void setPicdescribe1(String Picdescribe1) {
-        this.Picdescribe1 = Picdescribe1;
-    }
-
-    public String getPicture2() {
-        return Picture2;
-    }
-
-    public void setPicture2(String Picture2) {
-        this.Picture2 = Picture2;
-    }
-
-    public String getPicdescribe2() {
-        return Picdescribe2;
-    }
-
-    public void setPicdescribe2(String Picdescribe2) {
-        this.Picdescribe2 = Picdescribe2;
-    }
-
-    public String getPicture3() {
-        return Picture3;
-    }
-
-    public void setPicture3(String Picture3) {
-        this.Picture3 = Picture3;
-    }
-
-    public String getPicdescribe3() {
-        return Picdescribe3;
-    }
-
-    public void setPicdescribe3(String Picdescribe3) {
-        this.Picdescribe3 = Picdescribe3;
-    }
-
-    public double getPx() {
+    public String getPx() {
         return Px;
     }
 
-    public void setPx(double Px) {
+    public void setPx(String Px) {
         this.Px = Px;
     }
 
-    public double getPy() {
+    public String getPy() {
         return Py;
     }
 
-    public void setPy(double Py) {
+    public void setPy(String Py) {
         this.Py = Py;
     }
-    
-    public String getMap() {
-        return Map;
+
+    public String getToldescribe() {
+        return Toldescribe;
     }
 
-    public void setMap(String Map) {
-        this.Map = Map;
+    public void setToldescribe(String Toldescribe) {
+        this.Toldescribe = Toldescribe;
     }
 
-    public String getSpec() {
-        return Spec;
+    public String getCharge() {
+        return Charge;
     }
 
-    public void setSpec(String Spec) {
-        this.Spec = Spec;
+    public void setCharge(String Charge) {
+        this.Charge = Charge;
     }
 
-    public String getServiceinfo() {
-        return Serviceinfo;
+    public String getInfoId() {
+        return InfoId;
     }
 
-    public void setServiceinfo(String Serviceinfo) {
-        this.Serviceinfo = Serviceinfo;
+    public void setInfoId(String InfoId) {
+        this.InfoId = InfoId;
+    }
+
+    public String getZipcode() {
+        return Zipcode;
+    }
+
+    public void setZipcode(String Zipcode) {
+        this.Zipcode = Zipcode;
+    }
+
+    public String getAdd() {
+        return Add;
+    }
+
+    public void setAdd(String Add) {
+        this.Add = Add;
+    }
+
+    public String getRemarks() {
+        return Remarks;
+    }
+
+    public void setRemarks(String Remarks) {
+        this.Remarks = Remarks;
+    }
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
     public String getParkinginfo() {
@@ -245,5 +167,13 @@ public class Hotel {
 
     public void setParkinginfo(String Parkinginfo) {
         this.Parkinginfo = Parkinginfo;
+    }
+
+    public String getTYWebsite() {
+        return TYWebsite;
+    }
+
+    public void setTYWebsite(String TYWebsite) {
+        this.TYWebsite = TYWebsite;
     }
 }

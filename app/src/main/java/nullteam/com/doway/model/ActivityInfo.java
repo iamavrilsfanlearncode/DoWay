@@ -1,282 +1,288 @@
 package nullteam.com.doway.model;
 
+import java.util.List;
+
 public class ActivityInfo {
 
+
     /**
-     * OPEN API :  https://data.gov.tw/dataset/6037#r0
-     * Id : C2_315080000H_019960
-     * Name : 2019新北市萬金石馬拉松
-     * Description : 「新北市萬金石馬拉松」歷史可追朔至2003年的「金山馬拉松」，舉辦至2018年將邁入第16屆，首屆賽事起終點設置於金山青年活動中心，是一場僅約4,000人參加的地方性小型體育賽事，經過多年的品牌經營，成為全臺唯一國際田徑總會認證的標籤賽事。2004年，賽事路線擴張為金山及石門兩個行政區域，並將賽事名稱更改為「金石馬拉松」，後來為減少賽事交通管制影響地方居民，2006年將起終點改設置於萬里翡翠灣，歷經5年醞釀，2009年賽事路線擴張為萬里、金山及石門等三個行政區域，並將行政區域地名列入賽事名稱，賽事再度更名為「石萬金馬拉松」。2010年，為順應賽道行經路線順序，由萬里翡翠灣起跑，經金山至石門國中前折返之賽道路線，賽事名稱正式為「萬金石馬拉松」。至此，奠定賽事籌備行政區域規模、賽道路線以及賽事名稱，經多年賽事宣傳經營，漸漸形成「賽事品牌」概念，逐年屢創參賽人數新高，吸引眾多跑友踴躍報名參賽，並在2011年激增報名人數3000多人，總參賽人數超過9000人。2012年參賽人數正式突破萬人，成為臺灣炙手可熱的馬拉松賽事。2013年，第11屆賽事順利舉行完畢後，國內專家學者表示全臺僅「萬金石馬拉松」有條件申請國際田徑總會（International Association of Athletics Federations，簡稱IAAF）路跑標籤認證，新北市於第118次市政會議，由朱立倫市長宣布萬金石馬拉松積極爭取IAAF認證，由新北市政府體育處負責籌備相關申請認證工作，首先以通過「銅標籤BRONZE」認證為目標。2014年萬金石馬拉松，正式委由中華民國田徑協會向國際田徑總會提出「銅標籤」認證申請，並且順利於同年10月正式由國際田徑總會宣布通過認證，「新北市萬金石馬拉松」成為臺灣首場且唯一的IAAF銅標籤賽事，不僅成為臺灣最具代表性馬拉松賽事之一，並登錄IAAF年度馬拉松行事曆，讓新北市成功躍上世界體育舞臺，當年賽事除申請國際認證足為稱道外，萬里、金山及石門區公所號召超過千人之在地團體組成「啦啦隊加油團」，賽事當日凌晨即在賽道沿線盛裝打扮，融入如萬里蟹、女王頭、金山溫泉及石門風箏等地方特色物產，更有大鼓表演及電音三太子等傳統民俗，不畏清晨低溫散發全身熱力為每位選手打氣，更令眾人感受到在地熱情氛圍，賽事已經跨越交通管制的不便障礙，凝聚地方居民共識，成為北海岸在地居民認同且支持的年度盛會。2015年，是萬金石馬拉松通過IAAF銅標籤認證後第一場賽事，考量北海岸地區3月初氣候多雨濕冷，將以往每年固定於3月第1個星期天舉行之賽事慣例，調整為3月第3個星期天，將有12,000位愛好馬拉松賽事選手，以及眾多國際菁英選手同場較勁，大會更開放試辦外籍選手homestay體驗行程，服務來臺參加萬金石馬拉松的外籍選手，安排兩天三夜的家庭接待住宿，規劃野柳地質奇景及漁港文化、在地歷史民居建築及金山八煙聚落參訪課程，讓馬拉松不只是體育競賽，而是一種體驗在地特色生活文化的契機。2017年萬金石馬拉松首次與文創結合，除了邀請現代新銳設計師方序中設計選手跑衣，並邀請國內知名插畫家喜花如、鬼門圖文、辛卡米克等設計周邊，另與朱銘美術館合作活動現場拍照裝置，並由BSM Design一手打造2017萬金石主視覺與限定周邊商品，讓萬金石馬拉松不僅是一項馬拉松盛會，同時結合在地觀光、藝術及文創等，讓運動不再只運動，也可以很藝術很時尚。「2018新北市萬金石馬拉松」，訂於2018年3月18日清晨6時30分，在萬里翡翠灣鳴槍起跑，持續以「#only WAN」獨一無二、萬中選一之品牌精神貫穿賽事，不僅是全臺唯一IAAF國際認證馬拉松，更是跑界中一場絕美的視覺饗宴，山海交錯的美麗維納斯海岸線盡收眼底。新北市萬金石馬拉松於2017年12月通過國際田徑總會（IAAF）「銀標籤（SILVER）」認證，成為臺灣首場也是唯一通過國際認證之馬拉松賽事！2019新北市萬金石馬拉已將邁入第17屆，於3月17日舉辦，持續延伸賽事的主題「#only WAN」的精神與目標及符合第17屆的意涵，打造更具話題性、可看性的主軸-「#17來WAN」。
-     * Participation :
-     * Location : 新北市 萬里區
-     * Add : 海景路1號
-     * Region : 新北市
-     * Town : 萬里區
-     * Tel :
-     * Org : 新北市政府、中華民國田徑協會
-     * Start : 2019-03-17T00:00:00+08:00
-     * End : 2019-03-17T00:00:00+08:00
-     * Cycle :
-     * Noncycle :
-     * Website :
-     * Picture1 : https://www.taiwan.net.tw/att/event/c9810517-ad09-4e21-8407-4e0564659ca6.jpg
-     * Picdescribe1 : 全臺最美麗的「維納斯海岸線」
-     * Picture2 : https://www.taiwan.net.tw/att/event/2cc79f48-4c41-4619-9e04-5b743ad3f554.jpg
-     * Picdescribe2 : 萬金石馬拉松跑者融入山海美景中
-     * Picture3 : https://www.taiwan.net.tw/att/event/6291cd8c-db0c-4c02-b9a2-daa8eb70f351.jpg
-     * Picdescribe3 : 萬金石在地景觀專屬的龜吼駱駝峰跑線
-     * Px : 121.683852
-     * Py : 25.19107
-     * Class1 : 01
-     * Class2 : 02
-     * Map :
-     * Travellinginfo :
-     * Parkinginfo :
-     * Charge :
-     * Remarks :
+     * apiurl : https://data.tycg.gov.tw/api/v1/rest/datastore/3983e8e8-7a67-4bbd-b976-bb0cdb97e2f7?format=json
+     * postdate : 2019-11-12
+     * liaisonemail :
+     * file : null
+     * activitytime : 2019-12-29~2019-12-29 09:30~21:30
+     * closedate : 2019-12-29
+     * id : 201911120003
+     * subject : 2019YAMAHA聯合音樂發表會--中華教室
+     * topdate : null
+     * hostunit : 豫章實業有限公司
+     * img : [{"imgcontent":"<br>小<br>提<br>琴<br>","imgname":"122802.jpg","imgurl":"http://www.tycg.gov.tw/uploaddowndoc?file=activityhot/201911121542190.jpg&filedisplay=201911121542190.jpg&flag=pic"},{"imgcontent":"<br>單<br>簧<br>管<br>","imgname":"122801.jpg","imgurl":"http://www.tycg.gov.tw/uploaddowndoc?file=activityhot/201911121542340.jpg&filedisplay=201911121542340.jpg&flag=pic"},{"imgcontent":"<br>1<br>2<br>2<br>9<br>Y<br>A<br>M<br>A<br>H<br>A<br>音<br>樂<br>教<br>室<br>-<br>烏<br>克<br>麗<br>麗<br>","imgname":"1228.jpg","imgurl":"http://www.tycg.gov.tw/uploaddowndoc?file=activityhot/201911121542000.jpg&filedisplay=201911121542000.jpg&flag=pic"}]
+     * liaisonfax :
+     * istop : N
+     * liaisonper :
+     * activityplace : 文化局演藝廳
+     * activityaddress : 330　桃園市桃園區縣府21號
+     * liaisontel :
+     * fsort : 2
+     * link : null
+     * datasourceunit : 文化局
+     * studyhour : 0
+     * joinunit :
+     * _id : 1
+     * postunit : 文化局
+     * detailcontent : 2019YAMAHA聯合音樂發表會&lt;br /&gt;時間:108年12月29日(日)上午0930、下午1330、晚上1800&lt;br /&gt;地點:文化局演藝廳&lt;br /&gt;入場方式:自由入場&lt;br /&gt;&amp;nbsp;&lt;br /&gt;演出團體&lt;br /&gt;豫章實業及豫章音樂教室、聲坊音樂教室，為推廣桃園地區之音樂教育，增加音樂學習人口，透過音樂發表會活動，不但能展現平日練習的成果，更能培養音樂欣賞興趣及內涵。期能用音樂豐富生活，提升桃園地區之人文藝術素養。&lt;br /&gt;&amp;nbsp;&lt;br /&gt;活動內容介紹&lt;br /&gt;以獨奏或合奏方式呈現古典鋼琴、流行爵士鋼琴、電子琴、小提琴、長笛、豎笛、吉他、烏克麗麗、爵士鼓&amp;hellip;等不同樂器之演出，各種室內樂團型態或流行熱門樂團的合奏帶給音樂更豐富的呈現。&lt;br /&gt;&amp;nbsp;&lt;br /&gt;主要演出人員&lt;br /&gt;山葉聲坊音樂教室全體成員&lt;br /&gt;&amp;nbsp;
      */
 
-    private String Id;
-    private String Name;
-    private String Description;
-    private String Participation;
-    private String Location;
-    private String Add;
-    private String Region;
-    private String Town;
-    private String Tel;
-    private String Org;
-    private String Start;
-    private String End;
-    private String Cycle;
-    private String Noncycle;
-    private String Website;
-    private String Picture1;
-    private String Picdescribe1;
-    private String Picture2;
-    private String Picdescribe2;
-    private String Picture3;
-    private String Picdescribe3;
-    private double Px;
-    private double Py;
-    private String Travellinginfo;
-    private String Parkinginfo;
-    private String Charge;
-    private String Remarks;
+    private String postdate;
+    private String liaisonemail;
+    private Object file;
+    private String activitytime;
+    private String closedate;
+    private String id;
+    private String subject;
+    private Object topdate;
+    private String hostunit;
+    private String liaisonfax;
+    private String istop;
+    private String liaisonper;
+    private String activityplace;
+    private String activityaddress;
+    private String liaisontel;
+    private int fsort;
+    private Object link;
+    private String datasourceunit;
+    private int studyhour;
+    private String joinunit;
+    private int _id;
+    private String postunit;
+    private String detailcontent;
+    private List<ImgBean> img;
+
+    public String getPostdate() {
+        return postdate;
+    }
+
+    public void setPostdate(String postdate) {
+        this.postdate = postdate;
+    }
+
+    public String getLiaisonemail() {
+        return liaisonemail;
+    }
+
+    public void setLiaisonemail(String liaisonemail) {
+        this.liaisonemail = liaisonemail;
+    }
+
+    public Object getFile() {
+        return file;
+    }
+
+    public void setFile(Object file) {
+        this.file = file;
+    }
+
+    public String getActivitytime() {
+        return activitytime;
+    }
+
+    public void setActivitytime(String activitytime) {
+        this.activitytime = activitytime;
+    }
+
+    public String getClosedate() {
+        return closedate;
+    }
+
+    public void setClosedate(String closedate) {
+        this.closedate = closedate;
+    }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(String Id) {
-        this.Id = Id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return Name;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public String getDescription() {
-        return Description;
+    public Object getTopdate() {
+        return topdate;
     }
 
-    public void setDescription(String Description) {
-        this.Description = Description;
+    public void setTopdate(Object topdate) {
+        this.topdate = topdate;
     }
 
-    public String getParticipation() {
-        return Participation;
+    public String getHostunit() {
+        return hostunit;
     }
 
-    public void setParticipation(String Participation) {
-        this.Participation = Participation;
+    public void setHostunit(String hostunit) {
+        this.hostunit = hostunit;
     }
 
-    public String getLocation() {
-        return Location;
+    public String getLiaisonfax() {
+        return liaisonfax;
     }
 
-    public void setLocation(String Location) {
-        this.Location = Location;
+    public void setLiaisonfax(String liaisonfax) {
+        this.liaisonfax = liaisonfax;
     }
 
-    public String getAdd() {
-        return Add;
+    public String getIstop() {
+        return istop;
     }
 
-    public void setAdd(String Add) {
-        this.Add = Add;
+    public void setIstop(String istop) {
+        this.istop = istop;
     }
 
-    public String getRegion() {
-        return Region;
+    public String getLiaisonper() {
+        return liaisonper;
     }
 
-    public void setRegion(String Region) {
-        this.Region = Region;
+    public void setLiaisonper(String liaisonper) {
+        this.liaisonper = liaisonper;
     }
 
-    public String getTown() {
-        return Town;
+    public String getActivityplace() {
+        return activityplace;
     }
 
-    public void setTown(String Town) {
-        this.Town = Town;
+    public void setActivityplace(String activityplace) {
+        this.activityplace = activityplace;
     }
 
-    public String getTel() {
-        return Tel;
+    public String getActivityaddress() {
+        return activityaddress;
     }
 
-    public void setTel(String Tel) {
-        this.Tel = Tel;
+    public void setActivityaddress(String activityaddress) {
+        this.activityaddress = activityaddress;
     }
 
-    public String getOrg() {
-        return Org;
+    public String getLiaisontel() {
+        return liaisontel;
     }
 
-    public void setOrg(String Org) {
-        this.Org = Org;
+    public void setLiaisontel(String liaisontel) {
+        this.liaisontel = liaisontel;
     }
 
-    public String getStart() {
-        return Start;
+    public int getFsort() {
+        return fsort;
     }
 
-    public void setStart(String Start) {
-        this.Start = Start;
+    public void setFsort(int fsort) {
+        this.fsort = fsort;
     }
 
-    public String getEnd() {
-        return End;
+    public Object getLink() {
+        return link;
     }
 
-    public void setEnd(String End) {
-        this.End = End;
+    public void setLink(Object link) {
+        this.link = link;
     }
 
-    public String getCycle() {
-        return Cycle;
+    public String getDatasourceunit() {
+        return datasourceunit;
     }
 
-    public void setCycle(String Cycle) {
-        this.Cycle = Cycle;
+    public void setDatasourceunit(String datasourceunit) {
+        this.datasourceunit = datasourceunit;
     }
 
-    public String getNoncycle() {
-        return Noncycle;
+    public int getStudyhour() {
+        return studyhour;
     }
 
-    public void setNoncycle(String Noncycle) {
-        this.Noncycle = Noncycle;
+    public void setStudyhour(int studyhour) {
+        this.studyhour = studyhour;
     }
 
-    public String getWebsite() {
-        return Website;
+    public String getJoinunit() {
+        return joinunit;
     }
 
-    public void setWebsite(String Website) {
-        this.Website = Website;
+    public void setJoinunit(String joinunit) {
+        this.joinunit = joinunit;
     }
 
-    public String getPicture1() {
-        return Picture1;
+    public int get_id() {
+        return _id;
     }
 
-    public void setPicture1(String Picture1) {
-        this.Picture1 = Picture1;
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
-    public String getPicdescribe1() {
-        return Picdescribe1;
+    public String getPostunit() {
+        return postunit;
     }
 
-    public void setPicdescribe1(String Picdescribe1) {
-        this.Picdescribe1 = Picdescribe1;
+    public void setPostunit(String postunit) {
+        this.postunit = postunit;
     }
 
-    public String getPicture2() {
-        return Picture2;
+    public String getDetailcontent() {
+        return detailcontent;
     }
 
-    public void setPicture2(String Picture2) {
-        this.Picture2 = Picture2;
+    public void setDetailcontent(String detailcontent) {
+        this.detailcontent = detailcontent;
     }
 
-    public String getPicdescribe2() {
-        return Picdescribe2;
+    public List<ImgBean> getImg() {
+        return img;
     }
 
-    public void setPicdescribe2(String Picdescribe2) {
-        this.Picdescribe2 = Picdescribe2;
+    public void setImg(List<ImgBean> img) {
+        this.img = img;
     }
 
-    public String getPicture3() {
-        return Picture3;
-    }
+    public static class ImgBean {
+        /**
+         * imgcontent : <br>小<br>提<br>琴<br>
+         * imgname : 122802.jpg
+         * imgurl : http://www.tycg.gov.tw/uploaddowndoc?file=activityhot/201911121542190.jpg&filedisplay=201911121542190.jpg&flag=pic
+         */
 
-    public void setPicture3(String Picture3) {
-        this.Picture3 = Picture3;
-    }
+        private String imgcontent;
+        private String imgname;
+        private String imgurl;
 
-    public String getPicdescribe3() {
-        return Picdescribe3;
-    }
+        public String getImgcontent() {
+            return imgcontent;
+        }
 
-    public void setPicdescribe3(String Picdescribe3) {
-        this.Picdescribe3 = Picdescribe3;
-    }
+        public void setImgcontent(String imgcontent) {
+            this.imgcontent = imgcontent;
+        }
 
-    public double getPx() {
-        return Px;
-    }
+        public String getImgname() {
+            return imgname;
+        }
 
-    public void setPx(double Px) {
-        this.Px = Px;
-    }
+        public void setImgname(String imgname) {
+            this.imgname = imgname;
+        }
 
-    public double getPy() {
-        return Py;
-    }
+        public String getImgurl() {
+            return imgurl;
+        }
 
-    public void setPy(double Py) {
-        this.Py = Py;
-    }
-
-    public String getTravellinginfo() {
-        return Travellinginfo;
-    }
-
-    public void setTravellinginfo(String Travellinginfo) {
-        this.Travellinginfo = Travellinginfo;
-    }
-
-    public String getParkinginfo() {
-        return Parkinginfo;
-    }
-
-    public void setParkinginfo(String Parkinginfo) {
-        this.Parkinginfo = Parkinginfo;
-    }
-
-    public String getCharge() {
-        return Charge;
-    }
-
-    public void setCharge(String Charge) {
-        this.Charge = Charge;
-    }
-
-    public String getRemarks() {
-        return Remarks;
-    }
-
-    public void setRemarks(String Remarks) {
-        this.Remarks = Remarks;
+        public void setImgurl(String imgurl) {
+            this.imgurl = imgurl;
+        }
     }
 }

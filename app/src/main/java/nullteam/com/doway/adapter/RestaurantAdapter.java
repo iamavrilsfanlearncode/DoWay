@@ -36,7 +36,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.addressTextView.setText(datas.get(position).getAddress());
         holder.telTextView.setText(datas.get(position).getTel());
 
-     }
+    }
 
     @Override
     public int getItemCount() {

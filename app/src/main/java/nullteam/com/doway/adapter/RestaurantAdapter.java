@@ -3,7 +3,6 @@ package nullteam.com.doway.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,7 +34,67 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.nameTextView.setText(datas.get(position).getName());
         holder.addressTextView.setText(datas.get(position).getAddress());
         holder.telTextView.setText(datas.get(position).getTel());
+        //用getCity()方法讀取每筆資料的縣市
+        if(datas.get(position).getCity().equals("基隆市")){
 
+        }
+        if(datas.get(position).getCity().equals("新北市")){
+
+        }
+        if(datas.get(position).getCity().equals("台北市")){
+
+        }
+        if(datas.get(position).getCity().equals("桃園市")){
+
+        }
+        if(datas.get(position).getCity().equals("新竹縣")){
+
+        }
+        if(datas.get(position).getCity().equals("新竹市")){
+
+        }
+        if(datas.get(position).getCity().equals("苗栗縣")){
+
+        }
+        if(datas.get(position).getCity().equals("台中市")){
+
+        }
+        if(datas.get(position).getCity().equals("彰化縣")){
+
+        }
+        if(datas.get(position).getCity().equals("雲林縣")){
+
+        }
+        if(datas.get(position).getCity().equals("嘉義縣")){
+
+        }
+        if(datas.get(position).getCity().equals("台南市")){
+
+        }
+        if(datas.get(position).getCity().equals("高雄市")){
+
+        }
+        if(datas.get(position).getCity().equals("屏東縣")){
+
+        }
+        if(datas.get(position).getCity().equals("宜蘭縣")){
+
+        }
+        if(datas.get(position).getCity().equals("花蓮縣")){
+
+        }
+        if(datas.get(position).getCity().equals("台東縣")){
+
+        }
+        if(datas.get(position).getCity().equals("南投縣")){
+
+        }
+        if(datas.get(position).getCity().equals("連江縣")){
+
+        }
+        if(datas.get(position).getCity().equals("澎湖縣")){
+
+        }
     }
 
     @Override
@@ -50,7 +109,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, telTextView, addressTextView;
-        ImageView picImageView;
+        //宣告為第三方的圓框套件
+        de.hdodenhof.circleimageview.CircleImageView picImageView;
 
         public ViewHolder(View view) {
             super(view);

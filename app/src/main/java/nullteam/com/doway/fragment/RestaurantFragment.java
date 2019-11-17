@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -38,7 +39,7 @@ public class RestaurantFragment extends Fragment {
         DialogHelper.showProgressDialog(getActivity(), "更新餐廳列表");
         OpenDataService.getInstance().GetRestaurant(new OpenDataService.GetRestaurantResponse(){
             @Override
-            public void onResponse(final ArrayList<Restaurant> result) {
+            public void onGetRestlt(final ArrayList<Restaurant> result) {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -49,6 +50,16 @@ public class RestaurantFragment extends Fragment {
                     }
                 });
                 DialogHelper.closeProgressDialog();
+            }
+
+            @Override
+            public void onFail(final Exception ex) {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
 

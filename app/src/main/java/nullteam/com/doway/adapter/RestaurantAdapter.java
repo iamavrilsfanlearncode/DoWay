@@ -36,64 +36,64 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.telTextView.setText(datas.get(position).getTel());
         //用getCity()方法讀取每筆資料的縣市
         if(datas.get(position).getCity().equals("基隆市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_blue);
         }
         if(datas.get(position).getCity().equals("新北市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_cyan);
         }
         if(datas.get(position).getCity().equals("台北市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_green);
         }
         if(datas.get(position).getCity().equals("桃園市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_purple);
         }
         if(datas.get(position).getCity().equals("新竹縣")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_red);
         }
         if(datas.get(position).getCity().equals("新竹市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_yellow);
         }
         if(datas.get(position).getCity().equals("苗栗縣")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor);
         }
         if(datas.get(position).getCity().equals("台中市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_reverse);
         }
         if(datas.get(position).getCity().equals("彰化縣")){
-
+            holder.picImageView.setImageResource(R.drawable.movieicon1);
         }
         if(datas.get(position).getCity().equals("雲林縣")){
-
+            holder.picImageView.setImageResource(R.drawable.baseball_icon);
         }
         if(datas.get(position).getCity().equals("嘉義縣")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_high);
         }
         if(datas.get(position).getCity().equals("台南市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_low);
         }
         if(datas.get(position).getCity().equals("高雄市")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_mid);
         }
         if(datas.get(position).getCity().equals("屏東縣")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_high_high);
         }
         if(datas.get(position).getCity().equals("宜蘭縣")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_high_low);
         }
         if(datas.get(position).getCity().equals("花蓮縣")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_low_high);
         }
         if(datas.get(position).getCity().equals("台東縣")){
-
+            holder.picImageView.setImageResource(R.drawable.fullcolor_low_low);
         }
         if(datas.get(position).getCity().equals("南投縣")){
-
+            holder.picImageView.setImageResource(R.drawable.bible_icon);
         }
         if(datas.get(position).getCity().equals("連江縣")){
-
+            holder.picImageView.setImageResource(R.drawable.storage_icon_2);
         }
         if(datas.get(position).getCity().equals("澎湖縣")){
-
+            holder.picImageView.setImageResource(R.drawable.dbicon);
         }
     }
 

@@ -14,15 +14,7 @@
         android:layout_marginRight="20dp"
         android:orientation="horizontal">
 
-        <!--
-        <ImageView
-            android:id="@+id/Pic1"
-            android:layout_width="100dp"
-            android:layout_height="140dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            tools:srcCompat="@drawable/bee" />
-        -->
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -102,37 +94,44 @@
                 android:layout_weight="2"
                 android:orientation="horizontal">
 
-                <!--
-                <Button
-                    android:id="@+id/ButSubmit"
-                    android:layout_width="match_parent"
 
+                <Button
+                    android:id="@+id/BtnDetail"
+                    android:layout_width="match_parent"
                     android:layout_height="32dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/gradual"
+                    android:background="@drawable/shape"
                     android:fontFamily="sans-serif-black"
+
                     android:gravity="center"
-                    android:text="@string/ButSubmit"
-                    android:textColor="@color/white" />
-
+                    android:text="@string/BtnDetail"
+                    android:textColor="@color/green" />
                 <Button
-                    android:id="@+id/ButStory"
-
+                    android:id="@+id/BtnFavorite"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/gradual2"
                     android:fontFamily="sans-serif-black"
                     android:gravity="center"
-                    android:text="@string/ButStory"
+                    android:text="@string/BtnFavorite"
                     android:textColor="@color/white" />
-                -->
+
+
             </LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorbg"/>
+
 
 </LinearLayout>

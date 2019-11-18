@@ -3,4 +3,7 @@
     <string name="title_home">農村小吃</string>
     <string name="title_dashboard">民宿</string>
     <string name="title_notifications">觀光活動</string>
+    <string name="BtnDetail">詳細資訊</string>
+    <string name="BtnFavorite">加入收藏</string>
+
 </resources>

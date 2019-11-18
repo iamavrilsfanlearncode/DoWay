@@ -36,6 +36,7 @@ public class ActivityInfoFragment extends Fragment {
         listView.setLayoutManager(layoutManager);
         listView.setAdapter(adapter);
 
+        //加入ProgressDialog
         DialogHelper.showProgressDialog(getActivity(), "更新飯店列表");
         OpenDataService.getInstance().GetActivityInfo(new OpenDataService.GetActivityInfoResponse(){
             @Override

@@ -1,6 +1,8 @@
 package nullteam.com.doway.model;
 
-public class Restaurant {
+import java.io.Serializable;
+
+public class Restaurant implements Serializable {
     /**
      * OPEN API :  https://data.gov.tw/dataset/7778
      * ID : 01_100

@@ -29,12 +29,13 @@ public class RestaurantFragment extends Fragment {
 
         listView = root.findViewById(R.id.restaurant_List);
         ArrayList<Restaurant> result = new ArrayList<Restaurant>();
-        adapter = new RestaurantAdapter(result);
+        adapter = new RestaurantAdapter(this, result);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         listView.setLayoutManager(layoutManager);
         listView.setAdapter(adapter);
 
+        //加入ProgressDialog
         DialogHelper.showProgressDialog(getActivity(), "更新餐廳列表");
         OpenDataService.getInstance().GetRestaurant(new OpenDataService.GetRestaurantResponse(){
             @Override

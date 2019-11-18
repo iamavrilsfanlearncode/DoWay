@@ -13,7 +13,7 @@ public class DialogHelper {
 
     private static AlertDialog.Builder builder;
 
-
+    //ProgressDialog 製作
     public static void showProgressDialog(Context mContext, String msg) {
         contextRef = new WeakReference<>(mContext);
 

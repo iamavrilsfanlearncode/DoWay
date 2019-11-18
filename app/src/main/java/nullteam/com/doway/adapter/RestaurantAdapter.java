@@ -34,14 +34,14 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.nameTextView.setText(datas.get(position).getName());
         holder.addressTextView.setText(datas.get(position).getAddress());
         holder.telTextView.setText(datas.get(position).getTel());
-        //用getCity()方法讀取每筆資料的縣市
+        //用getCity()方法讀取每筆資料的縣市，設定預設圖片
         if(datas.get(position).getCity().equals("基隆市")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_blue);
         }
         if(datas.get(position).getCity().equals("新北市")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_cyan);
         }
-        if(datas.get(position).getCity().equals("台北市")){
+        if(datas.get(position).getCity().equals("臺北市")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_green);
         }
         if(datas.get(position).getCity().equals("桃園市")){
@@ -56,7 +56,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         if(datas.get(position).getCity().equals("苗栗縣")){
             holder.picImageView.setImageResource(R.drawable.fullcolor);
         }
-        if(datas.get(position).getCity().equals("台中市")){
+        if(datas.get(position).getCity().equals("臺中市")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_reverse);
         }
         if(datas.get(position).getCity().equals("彰化縣")){
@@ -68,7 +68,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         if(datas.get(position).getCity().equals("嘉義縣")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_high);
         }
-        if(datas.get(position).getCity().equals("台南市")){
+        if(datas.get(position).getCity().equals("臺南市")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_low);
         }
         if(datas.get(position).getCity().equals("高雄市")){
@@ -83,7 +83,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         if(datas.get(position).getCity().equals("花蓮縣")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_low_high);
         }
-        if(datas.get(position).getCity().equals("台東縣")){
+        if(datas.get(position).getCity().equals("臺東縣")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_low_low);
         }
         if(datas.get(position).getCity().equals("南投縣")){
@@ -91,6 +91,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         }
         if(datas.get(position).getCity().equals("連江縣")){
             holder.picImageView.setImageResource(R.drawable.storage_icon_2);
+        }
+        if(datas.get(position).getCity().equals("金門縣")){
+            holder.picImageView.setImageResource(R.drawable.dbicon1);
         }
         if(datas.get(position).getCity().equals("澎湖縣")){
             holder.picImageView.setImageResource(R.drawable.dbicon);

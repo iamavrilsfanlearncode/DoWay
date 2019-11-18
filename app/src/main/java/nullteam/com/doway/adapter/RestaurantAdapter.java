@@ -34,6 +34,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.nameTextView.setText(datas.get(position).getName());
         holder.addressTextView.setText(datas.get(position).getAddress());
         holder.telTextView.setText(datas.get(position).getTel());
+        holder.cityTextView.setText(datas.get(position).getCity());
         //用getCity()方法讀取每筆資料的縣市，設定預設圖片
         if(datas.get(position).getCity().equals("基隆市")){
             holder.picImageView.setImageResource(R.drawable.fullcolor_blue);
@@ -111,7 +112,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView, telTextView, addressTextView;
+        TextView nameTextView, telTextView, addressTextView, cityTextView;
         //宣告為第三方的圓框套件
         de.hdodenhof.circleimageview.CircleImageView picImageView;
 
@@ -121,6 +122,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
             telTextView = view.findViewById(R.id.Tel);
             addressTextView = view.findViewById(R.id.Address);
             picImageView = view.findViewById(R.id.Pic);
+            cityTextView = view.findViewById(R.id.City);
         }
     }
 }

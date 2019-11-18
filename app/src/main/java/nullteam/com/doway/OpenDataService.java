@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
@@ -67,20 +66,24 @@ public class OpenDataService {
                         if (callback != null) {
                             try {
                                 callback.onResponse(response.body().string());
-                            } catch (Exception ignored) {
-
+                            } catch (Exception ex) {
+                                callback.onFail(ex);
                             }
                         }
                         response.close();
-                    } catch (Exception ignored) {
-
+                    } catch (Exception ex) {
+                        callback.onFail(ex);
                     }
+                } else {
+                    String resCode = Integer.toString(response.code());
+                    callback.onFail(new Exception("取得回應失敗,錯誤狀態碼(" + resCode + ")"));
                 }
             }
 
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 Log.d(TAG, "onFailure: " + e.getMessage());
+                callback.onFail(e);
             }
         });
     }
@@ -96,7 +99,11 @@ public class OpenDataService {
                     Type collectionType = new TypeToken<List<Restaurant>>() { }.getType();
                     datas = gson.fromJson(arrayResults, collectionType);
                 }
-                callback.onResponse(datas);
+                callback.onGetRestlt(datas);
+            }
+
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
             }
         });
     }
@@ -116,7 +123,11 @@ public class OpenDataService {
                     Type collectionType = new TypeToken<List<Hotel>>() { }.getType();
                     datas = gson.fromJson(arrayResults, collectionType);
                 }
-                callback.onResponse(datas);
+                callback.onGetRestlt(datas);
+            }
+
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
             }
         });
     }
@@ -125,35 +136,48 @@ public class OpenDataService {
         GetJson("https://data.tycg.gov.tw/api/v1/rest/datastore/3983e8e8-7a67-4bbd-b976-bb0cdb97e2f7?format=json", new CallbackResponse() {
             @Override
             public void onResponse(String result) {
-                JsonParser parser = new JsonParser();
-                ArrayList<ActivityInfo> datas = null;
-                JsonObject root = parser.parse(result).getAsJsonObject();
+                try {
+                    JsonParser parser = new JsonParser();
+                    ArrayList<ActivityInfo> datas = null;
+                    JsonObject root = parser.parse(result).getAsJsonObject();
 
-                JsonArray arrayResults = root.getAsJsonObject("result").getAsJsonArray("records");
+                    JsonArray arrayResults = root.getAsJsonObject("result").getAsJsonArray("records");
 
-                if (arrayResults != null) {
-                    Gson gson = new Gson();
-                    Type collectionType = new TypeToken<List<ActivityInfo>>() { }.getType();
-                    datas = gson.fromJson(arrayResults, collectionType);
+                    if (arrayResults != null) {
+                        Gson gson = new Gson();
+                        Type collectionType = new TypeToken<List<ActivityInfo>>() {
+                        }.getType();
+                        datas = gson.fromJson(arrayResults, collectionType);
+                    }
+                    callback.onGetRestlt(datas);
+                } catch (Exception ex) {
+                    callback.onFail(ex);
                 }
-                callback.onResponse(datas);
+            }
+
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
             }
         });
     }
 
     public interface CallbackResponse {
         void onResponse(String result);
+        void onFail(Exception ex);
     }
 
-    public interface GetRestaurantResponse {
-        void onResponse(ArrayList<Restaurant> result);
+    public interface GetRestaurantResponse{
+        void onGetRestlt(ArrayList<Restaurant> result);
+        void onFail(Exception ex);
     }
 
-    public interface GetHotelResponse {
-        void onResponse(ArrayList<Hotel> result);
+    public interface GetHotelResponse{
+        void onGetRestlt(ArrayList<Hotel> result);
+        void onFail(Exception ex);
     }
 
-    public interface GetActivityInfoResponse {
-        void onResponse(ArrayList<ActivityInfo> result);
+    public interface GetActivityInfoResponse{
+        void onGetRestlt(ArrayList<ActivityInfo> result);
+        void onFail(Exception ex);
     }
 }

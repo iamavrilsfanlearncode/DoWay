@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -40,7 +41,7 @@ public class HotelFragment extends Fragment {
         DialogHelper.showProgressDialog(getActivity(), "更新飯店列表");
         OpenDataService.getInstance().GetHotel(new OpenDataService.GetHotelResponse(){
             @Override
-            public void onResponse(final ArrayList<Hotel> result) {
+            public void onGetRestlt(final ArrayList<Hotel> result) {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -51,6 +52,16 @@ public class HotelFragment extends Fragment {
                     }
                 });
                 DialogHelper.closeProgressDialog();
+            }
+
+            @Override
+            public void onFail(final Exception ex) {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
 

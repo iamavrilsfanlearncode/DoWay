@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -40,7 +41,7 @@ public class ActivityInfoFragment extends Fragment {
         DialogHelper.showProgressDialog(getActivity(), "更新飯店列表");
         OpenDataService.getInstance().GetActivityInfo(new OpenDataService.GetActivityInfoResponse(){
             @Override
-            public void onResponse(final ArrayList<ActivityInfo> result) {
+            public void onGetRestlt(final ArrayList<ActivityInfo> result) {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -51,6 +52,17 @@ public class ActivityInfoFragment extends Fragment {
                     }
                 });
                 DialogHelper.closeProgressDialog();
+            }
+
+            @Override
+            public void onFail(final Exception ex) {
+                DialogHelper.closeProgressDialog();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
         return root;

@@ -5,5 +5,6 @@
     <string name="title_notifications">觀光活動</string>
     <string name="BtnDetail">詳細資訊</string>
     <string name="BtnFavorite">加入收藏</string>
+    <string name="BtnBack">返回首頁</string>
 
 </resources>

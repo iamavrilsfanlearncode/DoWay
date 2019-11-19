@@ -47,7 +47,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.restaurant = datas.get(position);
         //用getCity()方法取得每筆資料的縣市
         holder.cityTextView.setText(datas.get(position).getCity());
-        //設定預設圖
     }
 
     @Override

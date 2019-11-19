@@ -1,17 +1,22 @@
 package nullteam.com.doway.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
+import nullteam.com.doway.adapter.RestaurantAdapter;
+import nullteam.com.doway.fragment.RestaurantFragment;
 import nullteam.com.doway.model.Restaurant;
 
 public class RestaurantDetail extends AppCompatActivity {
     private Restaurant restaurant;
     private TextView tv_Tel,tv_Name,tv_Address,tv_FoodFeature;
-
+    private Button btn_Back,btn_Favorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +32,23 @@ public class RestaurantDetail extends AppCompatActivity {
         tv_Address.setText(restaurant.getAddress());
         tv_FoodFeature = findViewById(R.id.FoodFeature);
         tv_FoodFeature.setText(restaurant.getFoodFeature());
+        //按鈕部分
+        //返回
+        btn_Back = findViewById(R.id.BtnBack);
+        btn_Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent().setClass(RestaurantDetail.this, RestaurantAdapter.class));
+                finish();
+            }
+        });
+        //收藏
+        btn_Favorite = findViewById(R.id.BtnFavorite);
+        btn_Favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }

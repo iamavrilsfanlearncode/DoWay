@@ -16,7 +16,7 @@
             android:id="@+id/Pic2"
             android:layout_width="match_parent"
             android:layout_height="284dp"
-            app:srcCompat="@drawable/v30005" />
+            app:srcCompat="@drawable/picturedefault" />
 
 
         <LinearLayout

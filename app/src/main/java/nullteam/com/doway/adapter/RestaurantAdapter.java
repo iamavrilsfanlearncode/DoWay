@@ -2,6 +2,7 @@ package nullteam.com.doway.adapter;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.security.Key;
 import java.util.ArrayList;
@@ -40,11 +44,17 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Restaurant data = datas.get(position);
 
-        holder.nameTextView.setText(datas.get(position).getName());
-        holder.addressTextView.setText(datas.get(position).getAddress());
-        holder.telTextView.setText(datas.get(position).getTel());
-        holder.restaurant = datas.get(position);
+        holder.nameTextView.setText(data.getName());
+        holder.addressTextView.setText(data.getAddress());
+        holder.telTextView.setText(data.getTel());
+        holder.restaurant = data;
+        if (!data.getPicURL().isEmpty()){
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(datas.get(position).getPicURL(), holder.picImageView);
+        }
+
         //用getCity()方法取得每筆資料的縣市
         holder.cityTextView.setText(datas.get(position).getCity());
     }

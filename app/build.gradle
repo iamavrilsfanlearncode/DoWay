@@ -37,4 +37,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     //圖片有圓形外框
     implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 }

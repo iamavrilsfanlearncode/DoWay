@@ -113,7 +113,7 @@
                     android:gravity="center"
                     android:text="@string/BtnDetail"
                     android:textColor="@color/green" />
-     
+
 
 
             </LinearLayout>

@@ -12,8 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
-
 import java.util.ArrayList;
 
 import nullteam.com.doway.R;
@@ -63,7 +61,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, telTextView, addressTextView, cityTextView;
-        Button but_detail, btn_favorite;
+        Button but_detail;
         //宣告為第三方的圓框套件
         de.hdodenhof.circleimageview.CircleImageView picImageView;
 
@@ -72,13 +70,13 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         public ViewHolder(View view) {
             super(view);
             nameTextView = view.findViewById(R.id.Subject);
-            telTextView = view.findViewById(R.id.closedate);
+            telTextView = view.findViewById(R.id.Tel);
             addressTextView = view.findViewById(R.id.activityaddress);
             picImageView = view.findViewById(R.id.Pic);
 			// add by G
 			cityTextView = view.findViewById(R.id.City);
             but_detail = view.findViewById(R.id.BtnDetail);
-            btn_favorite = view.findViewById(R.id.BtnFavorite);
+
 
             //跳至詳細頁的點擊事件
             but_detail.setOnClickListener(new View.OnClickListener() {

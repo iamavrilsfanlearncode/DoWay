@@ -24,13 +24,13 @@ public class HotelDetail extends AppCompatActivity {
         setContentView(R.layout.hotel_detail);
 
         hotel = (Hotel)getIntent().getSerializableExtra("hotel");
-        tv_Tel = findViewById(R.id.closedate);
+        tv_Tel = findViewById(R.id.Tel);
         tv_Tel.setText(hotel.getTel());
         tv_Name = findViewById(R.id.Subject);
         tv_Name.setText(hotel.getName());
         tv_Add =findViewById(R.id.activityaddress);
         tv_Add.setText(hotel.getAdd());
-        tv_Toldescribe = findViewById(R.id.detailcontent);
+        tv_Toldescribe = findViewById(R.id.Toldescribe);
         tv_Toldescribe.setText(hotel.getToldescribe());
 
 

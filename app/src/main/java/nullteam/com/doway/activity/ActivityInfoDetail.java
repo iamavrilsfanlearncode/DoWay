@@ -15,7 +15,7 @@ import nullteam.com.doway.model.ActivityInfo;
 
 public class ActivityInfoDetail extends AppCompatActivity {
     private ActivityInfo activityInfo;
-    private TextView tv_Subject,tv_closedate,tv_activityaddress,tv_detailcontent;
+    private TextView tv_Subject,tv_activitytime,tv_activityaddress,tv_detailcontent;
     private Button btn_Back,btn_Favorite;
 
     @Override
@@ -26,8 +26,8 @@ public class ActivityInfoDetail extends AppCompatActivity {
         activityInfo = (ActivityInfo) getIntent().getSerializableExtra("activityInfo");
         tv_Subject = findViewById(R.id.Subject);
         tv_Subject.setText(activityInfo.getSubject());
-        tv_closedate = findViewById(R.id.closedate);
-        tv_closedate.setText(activityInfo.getClosedate());
+        tv_activitytime = findViewById(R.id.activitytime);
+        tv_activitytime.setText(activityInfo.getActivitytime());
         tv_activityaddress = findViewById(R.id.activityaddress);
         tv_activityaddress.setText(activityInfo.getActivityaddress());
         tv_detailcontent = findViewById(R.id.detailcontent);

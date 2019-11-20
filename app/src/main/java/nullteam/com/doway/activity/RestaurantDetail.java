@@ -28,7 +28,7 @@ public class RestaurantDetail extends AppCompatActivity {
         setContentView(R.layout.restaurant_detail);
 
         restaurant = (Restaurant)getIntent().getSerializableExtra("restaurant");
-        tv_Tel = findViewById(R.id.closedate);
+        tv_Tel = findViewById(R.id.Tel);
         tv_Tel.setText(restaurant.getTel());
         tv_Name = findViewById(R.id.Subject);
         tv_Name.setText(restaurant.getName());

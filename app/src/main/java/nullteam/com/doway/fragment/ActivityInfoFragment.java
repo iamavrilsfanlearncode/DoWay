@@ -18,9 +18,9 @@ import nullteam.com.doway.OpenDataService;
 import nullteam.com.doway.R;
 import nullteam.com.doway.Utils.DialogHelper;
 import nullteam.com.doway.adapter.ActivityInfoAdapter;
-import nullteam.com.doway.adapter.HotelAdapter;
+
 import nullteam.com.doway.model.ActivityInfo;
-import nullteam.com.doway.model.Hotel;
+
 
 public class ActivityInfoFragment extends Fragment {
     private RecyclerView listView;
@@ -31,7 +31,7 @@ public class ActivityInfoFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_activityinfo, container, false);
         listView = root.findViewById(R.id.activityinfo_List);
         ArrayList<ActivityInfo> result = new ArrayList<ActivityInfo>();
-        adapter = new ActivityInfoAdapter(result);
+        adapter = new ActivityInfoAdapter(this,result);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         listView.setLayoutManager(layoutManager);

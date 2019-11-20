@@ -1,8 +1,9 @@
 package nullteam.com.doway.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ActivityInfo {
+public class ActivityInfo implements Serializable {
 
 
     /**
@@ -38,7 +39,6 @@ public class ActivityInfo {
     private Object file;
     private String activitytime;
     private String closedate;
-    private String id;
     private String subject;
     private Object topdate;
     private String hostunit;
@@ -53,7 +53,6 @@ public class ActivityInfo {
     private String datasourceunit;
     private int studyhour;
     private String joinunit;
-    private int _id;
     private String postunit;
     private String detailcontent;
     private List<ImgBean> img;
@@ -96,14 +95,6 @@ public class ActivityInfo {
 
     public void setClosedate(String closedate) {
         this.closedate = closedate;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getSubject() {
@@ -218,14 +209,6 @@ public class ActivityInfo {
         this.joinunit = joinunit;
     }
 
-    public int get_id() {
-        return _id;
-    }
-
-    public void set_id(int _id) {
-        this._id = _id;
-    }
-
     public String getPostunit() {
         return postunit;
     }
@@ -250,7 +233,7 @@ public class ActivityInfo {
         this.img = img;
     }
 
-    public static class ImgBean {
+    public static class ImgBean implements Serializable {
         /**
          * imgcontent : <br>小<br>提<br>琴<br>
          * imgname : 122802.jpg

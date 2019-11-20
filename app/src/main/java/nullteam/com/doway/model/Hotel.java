@@ -1,6 +1,8 @@
 package nullteam.com.doway.model;
 
-public class Hotel {
+import java.io.Serializable;
+
+public class Hotel implements Serializable {
 
     /**
      * API URL : https://data.tycg.gov.tw/api/v1/rest/datastore/c3340a19-9219-498a-9a46-21de506ba85b?format=json

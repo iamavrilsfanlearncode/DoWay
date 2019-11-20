@@ -13,6 +13,31 @@
         android:orientation="horizontal">
 
 
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/Pic"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@color/infogreen" />
+
+            <TextView
+                android:id="@+id/datasourceunit"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#ffffff" />
+
+        </FrameLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +69,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/closedate"
+                    android:id="@+id/activitytime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -70,8 +95,36 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/BtnDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"
+                    android:fontFamily="sans-serif-black"
+
+                    android:gravity="center"
+                    android:text="@string/BtnDetail"
+                    android:textColor="@color/green" />
+
+
+
+            </LinearLayout>
         </LinearLayout>
+
+
+
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

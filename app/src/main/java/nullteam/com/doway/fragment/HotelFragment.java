@@ -31,7 +31,7 @@ public class HotelFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_hotel, container, false);
         listView = root.findViewById(R.id.hotel_List);
         ArrayList<Hotel> result = new ArrayList<Hotel>();
-        adapter = new HotelAdapter(result);
+        adapter = new HotelAdapter(this,result);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         listView.setLayoutManager(layoutManager);

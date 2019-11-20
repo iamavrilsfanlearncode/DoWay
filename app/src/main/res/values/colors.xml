@@ -5,7 +5,9 @@
     <color name="colorAccent">#EB5305</color>
     <color name="transparent">#00000000</color>
     <color name="colorbg">#F5F5ED</color>
+    <color name="colorline">#E6E9E6</color>
     <color name="white">#FFFFFF</color>
-    <color name="green">#388e3c</color>
-
+    <color name="green">#578D75</color>
+    <color name="hotelgreen">#5F8D57</color>
+    <color name="infogreen">#8AA272</color>
 </resources>

@@ -46,10 +46,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.addressTextView.setText(data.getAddress());
         holder.telTextView.setText(data.getTel());
         holder.restaurant = data;
-        if (!data.getPicURL().isEmpty()){
-            ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(datas.get(position).getPicURL(), holder.picImageView);
-        }
 
         //用getCity()方法取得每筆資料的縣市
         holder.cityTextView.setText(datas.get(position).getCity());

@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
@@ -16,6 +19,7 @@ import nullteam.com.doway.model.Restaurant;
 public class RestaurantDetail extends AppCompatActivity {
     private Restaurant restaurant;
     private TextView tv_Tel,tv_Name,tv_Address,tv_FoodFeature;
+    private ImageView iv_Default;
     private Button btn_Back,btn_Favorite;
 
     @Override
@@ -32,6 +36,13 @@ public class RestaurantDetail extends AppCompatActivity {
         tv_Address.setText(restaurant.getAddress());
         tv_FoodFeature = findViewById(R.id.detailcontent);
         tv_FoodFeature.setText(restaurant.getFoodFeature());
+        //詳細頁圖片
+        iv_Default = findViewById(R.id.Default);
+        //如果取得的圖片URL不為空值，就將原有的預設圖片覆蓋掉
+        if (!restaurant.getPicURL().isEmpty()){
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(restaurant.getPicURL(), iv_Default);
+        }
         //按鈕部分
         //返回
         btn_Back = findViewById(R.id.BtnBack);

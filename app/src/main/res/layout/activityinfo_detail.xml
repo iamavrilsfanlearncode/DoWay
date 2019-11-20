@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="電話:"
+                    android:text="活動日期:"
                     android:textSize="15sp" />
 
                 <TextView

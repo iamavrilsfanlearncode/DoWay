@@ -49,7 +49,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/Name"
+                    android:id="@+id/Subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -66,7 +66,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/Tel"
+                    android:id="@+id/closedate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -84,7 +84,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/Address"
+                    android:id="@+id/activityaddress"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_weight="1"

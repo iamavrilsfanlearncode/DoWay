@@ -53,9 +53,9 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
 
         public ViewHolder(View view) {
             super(view);
-            nameTextView = view.findViewById(R.id.Name);
-            telTextView = view.findViewById(R.id.Tel);
-            addressTextView = view.findViewById(R.id.Address);
+            nameTextView = view.findViewById(R.id.Subject);
+            telTextView = view.findViewById(R.id.closedate);
+            addressTextView = view.findViewById(R.id.activityaddress);
             picImageView = view.findViewById(R.id.Pic);
         }
     }

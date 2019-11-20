@@ -1,8 +1,6 @@
 package nullteam.com.doway.adapter;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
-import java.security.Key;
 import java.util.ArrayList;
 
 import nullteam.com.doway.R;
@@ -50,10 +46,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         holder.addressTextView.setText(data.getAddress());
         holder.telTextView.setText(data.getTel());
         holder.restaurant = data;
-        if (!data.getPicURL().isEmpty()){
-            ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(datas.get(position).getPicURL(), holder.picImageView);
-        }
 
         //用getCity()方法取得每筆資料的縣市
         holder.cityTextView.setText(datas.get(position).getCity());
@@ -79,9 +71,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
         public ViewHolder(View view) {
             super(view);
-            nameTextView = view.findViewById(R.id.Name);
-            telTextView = view.findViewById(R.id.Tel);
-            addressTextView = view.findViewById(R.id.Address);
+            nameTextView = view.findViewById(R.id.Subject);
+            telTextView = view.findViewById(R.id.closedate);
+            addressTextView = view.findViewById(R.id.activityaddress);
             picImageView = view.findViewById(R.id.Pic);
 			// add by G
 			cityTextView = view.findViewById(R.id.City);

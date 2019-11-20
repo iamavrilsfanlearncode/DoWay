@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.RestaurantDetail" />
+        <activity android:name=".activity.HotelDetail" />
+        <activity android:name=".activity.ActivityInfoDetail" />
     </application>
 
 </manifest>

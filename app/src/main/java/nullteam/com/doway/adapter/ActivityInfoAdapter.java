@@ -54,8 +54,8 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
         public ViewHolder(View view) {
             super(view);
             subjectTextView = view.findViewById(R.id.Subject);
-            telTextView = view.findViewById(R.id.Tel);
-            addressTextView = view.findViewById(R.id.Address);
+            telTextView = view.findViewById(R.id.closedate);
+            addressTextView = view.findViewById(R.id.activityaddress);
             picImageView = view.findViewById(R.id.Pic);
         }
     }

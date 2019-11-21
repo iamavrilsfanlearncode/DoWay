@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">DoWay</string>
-    <string name="title_home">農村小吃</string>
-    <string name="title_dashboard">民宿</string>
-    <string name="title_notifications">觀光活動</string>
+    <string name="title_home">美食</string>
+    <string name="title_dashboard">住宿</string>
+    <string name="title_notifications">活動</string>
     <string name="BtnDetail">詳細資訊</string>
     <string name="BtnFavorite">加入收藏</string>
     <string name="BtnBack">返回首頁</string>

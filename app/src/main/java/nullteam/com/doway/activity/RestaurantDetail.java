@@ -32,7 +32,7 @@ public class RestaurantDetail extends AppCompatActivity {
         tv_Tel.setText(restaurant.getTel());
         tv_Name = findViewById(R.id.Subject);
         tv_Name.setText(restaurant.getName());
-        tv_Address =findViewById(R.id.activityaddress);
+        tv_Address =findViewById(R.id.Address);
         tv_Address.setText(restaurant.getAddress());
         tv_FoodFeature = findViewById(R.id.detailcontent);
         tv_FoodFeature.setText(restaurant.getFoodFeature());

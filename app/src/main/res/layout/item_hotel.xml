@@ -31,7 +31,7 @@
             android:layout_marginLeft="2dp"
             android:layout_marginTop="3dp"
             android:gravity="center"
-            android:text="桃園縣"
+            android:text="桃園市"
             />
 
     </FrameLayout>
@@ -86,7 +86,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/activityaddress"
+                    android:id="@+id/Add"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_weight="1"

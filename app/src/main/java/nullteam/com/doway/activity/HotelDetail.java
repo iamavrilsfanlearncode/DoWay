@@ -28,7 +28,7 @@ public class HotelDetail extends AppCompatActivity {
         tv_Tel.setText(hotel.getTel());
         tv_Name = findViewById(R.id.Subject);
         tv_Name.setText(hotel.getName());
-        tv_Add =findViewById(R.id.activityaddress);
+        tv_Add =findViewById(R.id.Add);
         tv_Add.setText(hotel.getAdd());
         tv_Toldescribe = findViewById(R.id.Toldescribe);
         tv_Toldescribe.setText(hotel.getToldescribe());

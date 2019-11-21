@@ -14,6 +14,8 @@
         android:layout_marginRight="20dp"
         android:orientation="horizontal">
 
+
+
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -38,7 +40,7 @@
         </FrameLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:orientation="vertical">
@@ -93,35 +95,40 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textSize="15dp" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-
-
-                <Button
-                    android:id="@+id/BtnDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape"
-                    android:fontFamily="sans-serif-black"
-
-                    android:gravity="center"
-                    android:text="@string/BtnDetail"
-                    android:textColor="@color/green" />
-
-
 
             </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/BtnDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@color/transparent"
+                android:text="@string/BtnDetail"
+                app:srcCompat="@drawable/icon_detail" />
+
+        <!--    <Button
+                android:id="@+id/BtnDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape"
+
+                android:fontFamily="sans-serif-black"
+                android:text="@string/BtnDetail"
+                android:textColor="@color/green" /> -->
+        </LinearLayout>
     </LinearLayout>
     <View
         android:layout_width="match_parent"

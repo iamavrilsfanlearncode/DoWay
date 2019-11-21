@@ -58,7 +58,7 @@ public class RestaurantDetail extends AppCompatActivity {
         btn_Favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(RestaurantDetail.this,"收藏成功!", Toast.LENGTH_SHORT).show(); // version1
+
             }
         });
     }

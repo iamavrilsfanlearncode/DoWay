@@ -1,7 +1,6 @@
 package nullteam.com.doway;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,6 +15,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import nullteam.com.doway.MyFavorite.MyFavoriteActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -31,7 +31,7 @@
             android:layout_marginLeft="2dp"
             android:layout_marginTop="3dp"
             android:gravity="center"
-            android:text="桃園縣"
+            android:text="桃園市"
             />
 
     </FrameLayout>

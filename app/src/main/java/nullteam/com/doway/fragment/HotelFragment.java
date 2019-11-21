@@ -38,7 +38,7 @@ public class HotelFragment extends Fragment {
         listView.setAdapter(adapter);
 
         //加入ProgressDialog
-        DialogHelper.showProgressDialog(getActivity(), "更新飯店列表");
+        DialogHelper.showProgressDialog(getActivity(), "更新住宿列表");
         OpenDataService.getInstance().GetHotel(new OpenDataService.GetHotelResponse(){
             @Override
             public void onGetRestlt(final ArrayList<Hotel> result) {

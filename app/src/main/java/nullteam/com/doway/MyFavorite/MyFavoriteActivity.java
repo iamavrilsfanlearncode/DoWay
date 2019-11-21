@@ -1,8 +1,10 @@
-package nullteam.com.doway;
+package nullteam.com.doway.MyFavorite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import nullteam.com.doway.R;
 
 public class MyFavoriteActivity extends AppCompatActivity {
 

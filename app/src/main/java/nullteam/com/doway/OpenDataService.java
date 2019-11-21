@@ -9,6 +9,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -142,8 +143,25 @@ public class OpenDataService {
                     JsonObject root = parser.parse(result).getAsJsonObject();
 
                     JsonArray arrayResults = root.getAsJsonObject("result").getAsJsonArray("records");
-
+                    //如果從JSON取得的資料不為空，便執行
                     if (arrayResults != null) {
+                        //利用JsonArray.size()得到項目總數，逐項檢查
+                        for(int i = 0; i < arrayResults.size(); i++){
+                            //再宣告一個JsonObject來讀取內層的Json資料
+                            JsonObject obj = arrayResults.get(i).getAsJsonObject();
+                            //如果「img」這項不為空，便執行
+                            if(obj.get("img") != null){
+                                //從已建立的JsonObject中讀取「img」這項，並存成JsonArray
+                                JsonArray imgUrl = obj.get("img").getAsJsonArray();
+                                //利用imgUrl.size()來確認「imgUrl」這項有幾組資料
+                                for(int j = 0; j< imgUrl.size(); j++){
+                                    Log.v("imgurl"+i,imgUrl.get(j).getAsJsonObject().get("imgurl").toString());
+                                }
+                            }
+                            else{
+                                Log.v("imgurl"+i,"default");
+                            }
+                        }
                         Gson gson = new Gson();
                         Type collectionType = new TypeToken<List<ActivityInfo>>() {
                         }.getType();

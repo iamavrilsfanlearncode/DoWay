@@ -45,7 +45,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
         Hotel data = datas.get(position);
 
         holder.nameTextView.setText(data.getName());
-        holder.addressTextView.setText(data.getAdd());
+        holder.addTextView.setText(data.getAdd());
         holder.TelTextView.setText(data.getTel());
         holder.hotel = data;
 
@@ -63,7 +63,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView, TelTextView, addressTextView;
+        TextView nameTextView, TelTextView, addTextView;
         Button but_detail;
         //宣告為第三方的圓框套件
         de.hdodenhof.circleimageview.CircleImageView picImageView;
@@ -73,7 +73,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
             super(view);
             nameTextView = view.findViewById(R.id.Subject);
             TelTextView = view.findViewById(R.id.Tel);
-            addressTextView = view.findViewById(R.id.activityaddress);
+            addTextView = view.findViewById(R.id.Add);
             picImageView = view.findViewById(R.id.Pic);
             // add by G
             but_detail = view.findViewById(R.id.BtnDetail);

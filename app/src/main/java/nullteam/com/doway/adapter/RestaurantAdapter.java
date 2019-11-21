@@ -71,7 +71,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
             super(view);
             nameTextView = view.findViewById(R.id.Subject);
             telTextView = view.findViewById(R.id.Tel);
-            addressTextView = view.findViewById(R.id.activityaddress);
+            addressTextView = view.findViewById(R.id.Address);
             picImageView = view.findViewById(R.id.Pic);
 			// add by G
 			cityTextView = view.findViewById(R.id.City);

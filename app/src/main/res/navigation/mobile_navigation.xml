@@ -6,6 +6,12 @@
     app:startDestination="@+id/navigation_restaurant">
 
     <fragment
+        android:id="@+id/navigation_homepage"
+        android:name="nullteam.com.doway.fragment.GridViewFragment"
+        android:label="@string/title_homepage"
+        tools:layout="@layout/fragment_gridview" />
+
+    <fragment
         android:id="@+id/navigation_restaurant"
         android:name="nullteam.com.doway.fragment.RestaurantFragment"
         android:label="@string/title_home"

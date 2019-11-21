@@ -3,10 +3,11 @@ package nullteam.com.doway.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +21,9 @@ public class RestaurantDetail extends AppCompatActivity {
     private Restaurant restaurant;
     private TextView tv_Tel,tv_Name,tv_Address,tv_FoodFeature;
     private ImageView iv_Default;
-    private Button btn_Back,btn_Favorite;
+    private Button btn_Back;
+    private ImageButton btn_Favorite;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class RestaurantDetail extends AppCompatActivity {
         tv_Name.setText(restaurant.getName());
         tv_Address =findViewById(R.id.Address);
         tv_Address.setText(restaurant.getAddress());
-        tv_FoodFeature = findViewById(R.id.detailcontent);
+        tv_FoodFeature = findViewById(R.id.FoodFeature);
         tv_FoodFeature.setText(restaurant.getFoodFeature());
         //詳細頁圖片
         iv_Default = findViewById(R.id.Default);

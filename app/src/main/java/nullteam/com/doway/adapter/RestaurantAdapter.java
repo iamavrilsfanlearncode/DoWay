@@ -6,11 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 
@@ -47,6 +50,11 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
         //用getCity()方法取得每筆資料的縣市
         holder.cityTextView.setText(datas.get(position).getCity());
+        if (!data.getPicURL().isEmpty()){
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(datas.get(position).getPicURL(), holder.picImageView);
+        }
+
     }
 
     @Override
@@ -61,7 +69,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, telTextView, addressTextView, cityTextView;
-        Button but_detail;
+        ImageButton but_detail;
         //宣告為第三方的圓框套件
         de.hdodenhof.circleimageview.CircleImageView picImageView;
 

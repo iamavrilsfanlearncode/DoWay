@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -64,7 +65,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, TelTextView, addTextView;
-        Button but_detail;
+        ImageButton but_detail;
         //宣告為第三方的圓框套件
         de.hdodenhof.circleimageview.CircleImageView picImageView;
         Hotel hotel;

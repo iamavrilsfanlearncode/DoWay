@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,7 +63,7 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView subjectTextView, atTextView, addTextView,dsuTextView;
-        Button but_detail;
+        ImageButton but_detail;
         //宣告為第三方的圓框套件
         de.hdodenhof.circleimageview.CircleImageView picImageView;
 

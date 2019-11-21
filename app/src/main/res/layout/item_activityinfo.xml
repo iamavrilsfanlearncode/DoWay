@@ -39,7 +39,7 @@
         </FrameLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:orientation="vertical">
@@ -95,33 +95,28 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="horizontal">
 
-
-                <Button
-                    android:id="@+id/BtnDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape"
-                    android:fontFamily="sans-serif-black"
-
-                    android:gravity="center"
-                    android:text="@string/BtnDetail"
-                    android:textColor="@color/green" />
-
-
-
-            </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/BtnDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@color/transparent"
+                android:src="@drawable/icon_detail"
+                android:text="@string/BtnDetail" />
+
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -129,6 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorbg"/>
+        android:layout_margin="15dp"
+        android:background="@color/colorline"/>
 
 </LinearLayout>

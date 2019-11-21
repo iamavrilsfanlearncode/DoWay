@@ -43,6 +43,7 @@ public class Hotel implements Serializable {
     private String Parkinginfo;
     private String TYWebsite;
 
+
     public String getWebsite() {
         return Website;
     }

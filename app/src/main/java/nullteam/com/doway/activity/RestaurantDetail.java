@@ -34,7 +34,7 @@ public class RestaurantDetail extends AppCompatActivity {
         tv_Name.setText(restaurant.getName());
         tv_Address =findViewById(R.id.Address);
         tv_Address.setText(restaurant.getAddress());
-        tv_FoodFeature = findViewById(R.id.detailcontent);
+        tv_FoodFeature = findViewById(R.id.FoodFeature);
         tv_FoodFeature.setText(restaurant.getFoodFeature());
         //詳細頁圖片
         iv_Default = findViewById(R.id.Default);

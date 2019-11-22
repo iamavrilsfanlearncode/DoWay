@@ -3,7 +3,6 @@ package nullteam.com.doway.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -13,9 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+
 import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.Restaurant;
+
 
 public class RestaurantDetail extends AppCompatActivity {
     private Restaurant restaurant;

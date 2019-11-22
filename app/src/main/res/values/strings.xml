@@ -8,5 +8,5 @@
     <string name="BtnBack">返回首頁</string>
     <string name="MyFavorite">我的收藏</string>
     <string name="title_homepage">首頁</string>
-
+    <string name="noData">尚無收藏項目</string>
 </resources>

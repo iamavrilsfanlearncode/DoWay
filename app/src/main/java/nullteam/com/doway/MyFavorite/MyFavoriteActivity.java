@@ -2,30 +2,32 @@ package nullteam.com.doway.MyFavorite;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import nullteam.com.doway.R;
+import nullteam.com.doway.activity.RestaurantDetail;
 import nullteam.com.doway.model.Restaurant;
 
 public class MyFavoriteActivity extends AppCompatActivity {
-    ListView myFavList;
-    ArrayList<Restaurant> restaurants = new ArrayList<>();
-    MyFavListAdapter myFavListAdapter;
     private MyFavDbAdapter myFavDbAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    Cursor cursor;
+    TextView no_data;
+    ListView myFavList;
     int item_id;
+    private Intent intent;
+    MyFavListAdapter myFavListAdapter;
+    ArrayList<Restaurant> restaurants = new ArrayList<>();
+    Cursor cursor;
     private AlertDialog dialog = null;
     AlertDialog.Builder builder = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +35,36 @@ public class MyFavoriteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_favorite);
 
         myFavList = findViewById(R.id.myFavList);
-        myFavDbAdapter = new MyFavDbAdapter(this);
-        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false); // 不確定是否正確
-        displayaList(); // 顯示所有 memo 資料
+        no_data = findViewById(R.id.noData);
 
+        myFavDbAdapter = new MyFavDbAdapter(this);
+        Log.i("dbCount=",String.valueOf(myFavDbAdapter.listMyFavRestaurant().getCount()));
+
+        //判斷目前是否有收藏資料並設定顯示元件，如果是0，就顯示「尚無收藏項目」
+        if(myFavDbAdapter.listMyFavRestaurant().getCount() == 0){
+            myFavList.setVisibility(View.INVISIBLE);
+            no_data.setVisibility(View.VISIBLE);
+        }else {
+            myFavList.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.INVISIBLE);
+        }
+        displayList(); // 顯示所有收藏資料
+
+        // 跳到各筆資料的詳細頁
         myFavList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 cursor.move(position);
                 item_id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
+
+                intent = new Intent();
+                intent.putExtra("item_id", item_id);
+                intent.setClass(MyFavoriteActivity.this, RestaurantDetail.class);
+                startActivity(intent);
             }
         });
+
+        // 移除收藏
         myFavList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -56,7 +77,7 @@ public class MyFavoriteActivity extends AppCompatActivity {
         });
         builder = new AlertDialog.Builder(this);
         builder.setTitle("訊息")
-                .setMessage("確定移除我的最愛？")
+                .setMessage("確定移除收藏？")
                 .setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     // 設定確定按鈕
                     @Override
@@ -65,11 +86,12 @@ public class MyFavoriteActivity extends AppCompatActivity {
                         if(is_deleted){
                             Toast.makeText(MyFavoriteActivity.this,"已取消收藏！", Toast.LENGTH_SHORT).show();
                             restaurants = new ArrayList<>();
-                            displayaList();
+                            displayList();
                         }
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    //設定取消按鈕
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -77,12 +99,22 @@ public class MyFavoriteActivity extends AppCompatActivity {
                 });
     }
 
-    private void displayaList() {
+    private void displayList() {
         // 在 ListView 上顯示所有 myFavList 的資料
         cursor = myFavDbAdapter.listMyFavRestaurant();
+        //Log.v("cursor",cursor.getString(3));
+        if(cursor != null){
+            cursor.moveToFirst();
+        }
         if(cursor.moveToFirst()){
             do{
-                // 待補
+                restaurants.add(new Restaurant(
+                        cursor.getString(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4)
+                       ));
             }while (cursor.moveToNext());
         }
         cursor.moveToFirst();

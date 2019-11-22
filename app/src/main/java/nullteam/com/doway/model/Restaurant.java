@@ -58,6 +58,14 @@ public class Restaurant implements Serializable {
     private String Coordinate;
     private String PicURL;
 
+    public Restaurant(String ID, String name, String address, String tel, String picURL) {
+        this.ID = ID;
+        this.Name = name;
+        this.Address = address;
+        this.Tel = tel;
+        this.PicURL = picURL;
+    }
+
     public String getID() {
         return ID;
     }

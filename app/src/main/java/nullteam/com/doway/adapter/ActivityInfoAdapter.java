@@ -12,8 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
-
 import java.util.ArrayList;
 
 import nullteam.com.doway.R;
@@ -39,7 +37,7 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ActivityInfoAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ActivityInfo data = datas.get(position);
 
         holder.subjectTextView.setText(data.getSubject());
@@ -49,8 +47,6 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
 
         //取得datasourceunit文字
         holder.dsuTextView.setText(datas.get(position).getDatasourceunit());
-
-
     }
 
     @Override

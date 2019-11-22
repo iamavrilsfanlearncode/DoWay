@@ -42,7 +42,7 @@ public class MyFavDbAdapter {
             e.printStackTrace();
         }finally {
             mdb.close(); // 關閉資料庫，才不會有資訊安全的風險，也可以釋放空間
-            Toast.makeText(mCtx,"收藏成功!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mCtx,"Test收藏成功！", Toast.LENGTH_SHORT).show();
         }
         return id;
     }
@@ -65,7 +65,7 @@ public class MyFavDbAdapter {
     public boolean deleteMyFavRestaurant(int id){
         String[] args = {Integer.toString(id)};
         mdb.delete(TABLE_NAME,"_id=?",args);
-        Toast.makeText(mCtx,"取消收藏!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mCtx,"Test取消收藏！", Toast.LENGTH_SHORT).show();
         return true;
     }
 }

@@ -98,7 +98,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/detailcontent"
+                    android:id="@+id/FoodFeature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"

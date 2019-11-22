@@ -7,11 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
-
 import java.util.ArrayList;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.Restaurant;

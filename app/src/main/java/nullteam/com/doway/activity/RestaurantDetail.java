@@ -12,7 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.ArrayList;
+
 import nullteam.com.doway.MainActivity;
+import nullteam.com.doway.MyFavorite.MyFavDbAdapter;
+import nullteam.com.doway.MyFavorite.MyFavoriteActivity;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.Restaurant;
 
@@ -21,6 +25,10 @@ public class RestaurantDetail extends AppCompatActivity {
     private TextView tv_Tel,tv_Name,tv_Address,tv_FoodFeature;
     private ImageView iv_Default;
     private Button btn_Back,btn_Favorite;
+    private MyFavDbAdapter myFavDbAdapter;
+    int item_id;
+    String image_restaurant, name_restaurant, tel_restaurant, address_restaurant;
+    Boolean addFav = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +42,7 @@ public class RestaurantDetail extends AppCompatActivity {
         tv_Name.setText(restaurant.getName());
         tv_Address =findViewById(R.id.Address);
         tv_Address.setText(restaurant.getAddress());
-        tv_FoodFeature = findViewById(R.id.detailcontent);
+        tv_FoodFeature = findViewById(R.id.FoodFeature);
         tv_FoodFeature.setText(restaurant.getFoodFeature());
         //詳細頁圖片
         iv_Default = findViewById(R.id.Default);
@@ -55,10 +63,24 @@ public class RestaurantDetail extends AppCompatActivity {
         });
         //收藏
         btn_Favorite = findViewById(R.id.BtnFavorite);
+        myFavDbAdapter = new MyFavDbAdapter(this);
         btn_Favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//                boolean is_deleted = myFavDbAdapter.deleteMyFavRestaurant(item_id);
+//                if(is_deleted){
+//                    myFavDbAdapter.createMyFavRestaurant(image_restaurant, name_restaurant, tel_restaurant, address_restaurant);
+//                }
+                if(addFav == false){
+                    addFav = true;
+                    btn_Favorite.setText("取消收藏");
+                    myFavDbAdapter.createMyFavRestaurant(image_restaurant, name_restaurant, tel_restaurant, address_restaurant);
+                }
+                else{
+                    addFav = false;
+                    btn_Favorite.setText("加入收藏");
+                    myFavDbAdapter.deleteMyFavRestaurant(item_id);
+                }
             }
         });
     }

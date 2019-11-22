@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MyFavorite.MyFavoriteActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
+        android:id="@+id/myFavList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

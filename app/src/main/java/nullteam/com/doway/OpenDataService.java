@@ -150,22 +150,26 @@ public class OpenDataService {
                             //再宣告一個JsonObject來讀取內層的Json資料
                             JsonObject obj = arrayResults.get(i).getAsJsonObject();
                             //如果「img」這項不為空，便執行
-                            if(obj.get("img") != null){
-                                //從已建立的JsonObject中讀取「img」這項，並存成JsonArray
-                                JsonArray imgUrl = obj.get("img").getAsJsonArray();
-                                //利用imgUrl.size()來確認「imgUrl」這項有幾組資料
-                                for(int j = 0; j< imgUrl.size(); j++){
-                                    Log.v("imgurl"+i,imgUrl.get(j).getAsJsonObject().get("imgurl").toString());
+                            try{
+                                if(obj.get("img") != null){
+                                    //從已建立的JsonObject中讀取「img」這項，並存成JsonArray
+                                    JsonArray imgUrl = obj.get("img").getAsJsonArray();
+                                    //利用imgUrl.size()來確認「imgUrl」這項有幾組資料
+                                    //只需一張圖，所以使用get(0)來取得第一張圖的圖片網址
+                                    Log.v("imgurl"+i,imgUrl.get(0).getAsJsonObject().get("imgurl").toString());
                                 }
                             }
-                            else{
-                                Log.v("imgurl"+i,"default");
+                            //如果「img」這項為空，給予一個預設值
+                            catch (Exception e) {
+                                Log.v("imgurl"+i,"Default");
                             }
                         }
                         Gson gson = new Gson();
                         Type collectionType = new TypeToken<List<ActivityInfo>>() {
                         }.getType();
                         datas = gson.fromJson(arrayResults, collectionType);
+
+                        
                     }
                     callback.onGetRestlt(datas);
                 } catch (Exception ex) {

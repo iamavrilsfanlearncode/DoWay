@@ -41,7 +41,7 @@ public class MyFavListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Restaurant one_restaurant = (Restaurant) getItem(position);
+        Restaurant restaurant = (Restaurant) getItem(position);
         convertView = inflater.inflate(R.layout.item_fav_restaurant, null);
 
         CircleImageView image_restaurant = convertView.findViewById(R.id.FavPic);
@@ -49,15 +49,15 @@ public class MyFavListAdapter extends BaseAdapter {
         TextView tel_restaurant = convertView.findViewById(R.id.FavTel);
         TextView address_restaurant = convertView.findViewById(R.id.FavAddress);
 
-        name_restaurant.setText(one_restaurant.getName());
-        tel_restaurant.setText(one_restaurant.getTel());
-        address_restaurant.setText(one_restaurant.getAddress());
+        name_restaurant.setText(restaurant.getName());
+        tel_restaurant.setText(restaurant.getTel());
+        address_restaurant.setText(restaurant.getAddress());
 
         //如果取得的圖片URL不為空值，就將原有的預設圖片覆蓋掉
-//        if (!restaurant.getPicURL().isEmpty()){
-//            ImageLoader imageLoader = ImageLoader.getInstance();
-//            imageLoader.displayImage(restaurant.getPicURL(), image_restaurant);
-//        }
+        if (!restaurant.getPicURL().isEmpty()){
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(restaurant.getPicURL(), image_restaurant);
+        }
         return convertView;
     }
 }

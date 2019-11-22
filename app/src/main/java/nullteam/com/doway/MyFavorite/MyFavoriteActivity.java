@@ -38,7 +38,6 @@ public class MyFavoriteActivity extends AppCompatActivity {
         no_data = findViewById(R.id.noData);
 
         myFavDbAdapter = new MyFavDbAdapter(this);
-        Log.i("dbCount=",String.valueOf(myFavDbAdapter.listMyFavRestaurant().getCount()));
 
         //判斷目前是否有收藏資料並設定顯示元件，如果是0，就顯示「尚無收藏項目」
         if(myFavDbAdapter.listMyFavRestaurant().getCount() == 0){
@@ -102,18 +101,17 @@ public class MyFavoriteActivity extends AppCompatActivity {
     private void displayList() {
         // 在 ListView 上顯示所有 myFavList 的資料
         cursor = myFavDbAdapter.listMyFavRestaurant();
-        //Log.v("cursor",cursor.getString(3));
         if(cursor != null){
             cursor.moveToFirst();
         }
         if(cursor.moveToFirst()){
             do{
                 restaurants.add(new Restaurant(
-                        cursor.getString(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getString(4)
+                        cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_ID)),
+                        cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_NAME)),
+                        cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_ADDRESS)),
+                        cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_TEL)),
+                        cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_IMG))
                        ));
             }while (cursor.moveToNext());
         }

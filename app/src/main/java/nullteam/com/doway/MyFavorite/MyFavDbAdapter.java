@@ -43,7 +43,7 @@ public class MyFavDbAdapter {
         }finally {
             mdb.close(); // 關閉資料庫，才不會有資訊安全的風險，也可以釋放空間
             Log.v("tel", values.toString());
-            Toast.makeText(mCtx,"Test收藏成功！", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mCtx,"收藏成功！", Toast.LENGTH_LONG).show();
         }
         return id;
     }

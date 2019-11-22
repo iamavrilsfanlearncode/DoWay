@@ -21,7 +21,7 @@ public class MyFavoriteActivity extends AppCompatActivity {
     private MyFavDbAdapter myFavDbAdapter;
     TextView no_data;
     ListView myFavList;
-    int item_id;
+    String item_id;
     private Intent intent;
     MyFavListAdapter myFavListAdapter;
     ArrayList<Restaurant> restaurants = new ArrayList<>();
@@ -54,7 +54,7 @@ public class MyFavoriteActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 cursor.move(position);
-                item_id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
+                item_id = cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_ID));
 
                 intent = new Intent();
                 intent.putExtra("item_id", item_id);
@@ -68,7 +68,7 @@ public class MyFavoriteActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 cursor.move(position);
-                item_id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
+                item_id = cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_ID));
                 dialog = builder.create();
                 dialog.show();
                 return true;

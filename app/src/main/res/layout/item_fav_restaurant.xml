@@ -101,12 +101,6 @@
         </LinearLayout>
 
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:layout_margin="15dp"
-        android:background="@color/colorline"/>
 
 
 </LinearLayout>

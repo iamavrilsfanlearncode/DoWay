@@ -18,13 +18,10 @@ import nullteam.com.doway.model.Restaurant;
 public class RestaurantDetail extends AppCompatActivity {
     private Restaurant restaurant;
     private TextView tv_Tel,tv_Name,tv_Address,tv_FoodFeature;
-    //private TextView fav_Tel,fav_Name,fav_Address;
     private ImageView iv_Default;
-    //private ImageView fav_Pic;
     private Button btn_Back,btn_Favorite;
     private MyFavDbAdapter myFavDbAdapter;
     Cursor lists;
-    String image_restaurant, name_restaurant, tel_restaurant, address_restaurant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +37,6 @@ public class RestaurantDetail extends AppCompatActivity {
         tv_Name.setText(restaurant.getName());
         tv_Address.setText(restaurant.getAddress());
         tv_FoodFeature.setText(restaurant.getFoodFeature());
-
-        /*
-        fav_Pic = findViewById(R.id.FavPic);
-        fav_Tel = findViewById(R.id.FavTel);
-        fav_Name = findViewById(R.id.FavAddress);
-        fav_Address = findViewById(R.id.FavAddress);
-         */
 
         //詳細頁圖片
         iv_Default = findViewById(R.id.Default);

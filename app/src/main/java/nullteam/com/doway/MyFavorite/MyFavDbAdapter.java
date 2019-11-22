@@ -63,10 +63,10 @@ public class MyFavDbAdapter {
         }
         return mCursor;
     }
-    public boolean deleteMyFavRestaurant(int id){
-        String[] args = {Integer.toString(id)};
+    public boolean deleteMyFavRestaurant(String id){
+        String[] args = {id};
         mdb.delete(TABLE_NAME,"_id=?",args);
-        Toast.makeText(mCtx,"Test取消收藏！", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mCtx,"已取消收藏！", Toast.LENGTH_SHORT).show();
         return true;
     }
 }

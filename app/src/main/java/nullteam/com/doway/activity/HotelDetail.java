@@ -17,7 +17,6 @@ public class HotelDetail extends AppCompatActivity {
     private Hotel hotel;
     private TextView tv_Tel,tv_Name,tv_Add,tv_Toldescribe;
     private Button btn_Back,btn_Favorite;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +44,7 @@ public class HotelDetail extends AppCompatActivity {
             }
         });
         //收藏
-        btn_Favorite = findViewById(R.id.BtnFavorite);
+        btn_Favorite =findViewById(R.id.BtnFavorite);
         btn_Favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -3,21 +3,26 @@
 
   <!--  <item
         android:id="@+id/navigation_restaurant"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@mipmap/ic_home"
         android:title="@string/title_home" /> -->
+  <item
+      android:id="@+id/navigation_homepage"
+      android:icon="@drawable/home"
+      android:title="@string/title_homepage" />
+
     <item
         android:id="@+id/navigation_restaurant"
-        android:icon="@drawable/icon_restaurant"
+        android:icon="@mipmap/ic_restaurant"
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_hotel"
-        android:icon="@drawable/icon_hotel"
+        android:icon="@mipmap/icon_hotel"
         android:title="@string/title_dashboard" />
 
     <item
         android:id="@+id/navigation_activityinfo"
-        android:icon="@drawable/icon_info"
+        android:icon="@mipmap/ic_info"
         android:title="@string/title_notifications" />
 
 </menu>

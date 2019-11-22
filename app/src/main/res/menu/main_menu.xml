@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/toMyFavorite"
-        android:icon="@drawable/like2"
+        android:icon="@mipmap/ic_like2"
         android:title="@string/MyFavorite"
         app:showAsAction="always" />
 </menu>

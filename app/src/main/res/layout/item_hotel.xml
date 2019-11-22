@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/transparent"
-                android:src="@drawable/icon_detail"
+                android:src="@mipmap/ic_detail"
                 android:text="@string/BtnDetail" />
 
 

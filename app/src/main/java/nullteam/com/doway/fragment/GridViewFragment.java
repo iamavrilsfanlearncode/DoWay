@@ -40,18 +40,22 @@ public class GridViewFragment extends Fragment {
     private List<Integer> list = new ArrayList<>(3);
     RecyclerView recyclerView;
     GridLayoutManager layoutManager;
-    private CustomGrid adapter;
+    public CustomGrid adapter;
+    public ArrayList<Restaurant> Gird_Data = null;
 
 
-    private int iconId[] = {R.drawable.aa, R.drawable.bb, R.drawable.cc, R.drawable.dd, R.drawable.ee, R.drawable.ff};
-    private String nameList[] = {"十股糖仁文創園區", "國家歌劇院", "傳統藝術中心", "清水斷崖", "奇美博物館", "六福村"};
+   // private int iconId[] = {R.drawable.aa, R.drawable.bb, R.drawable.cc, R.drawable.dd, R.drawable.ee, R.drawable.ff};
+   // private String nameList[] = {"十股糖仁文創園區", "國家歌劇院", "傳統藝術中心", "清水斷崖", "奇美博物館", "六福村"};
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_gridview, container, false);
 
         recyclerView = root.findViewById(R.id.Gridrecycler);
-        ArrayList<Restaurant> result = new ArrayList<Restaurant>();
+        Gird_Data = new ArrayList<Restaurant>();
+        Gird_Data.add(new Restaurant());
+
+       // ArrayList<Restaurant> result = new ArrayList<Restaurant>();
         adapter = new CustomGrid(this,result);
         layoutManager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setHasFixedSize(true);

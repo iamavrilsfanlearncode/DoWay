@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import nullteam.com.doway.model.ActivityInfo;
+import nullteam.com.doway.model.ActivityPicInfo;
 import nullteam.com.doway.model.Hotel;
 import nullteam.com.doway.model.Restaurant;
 import okhttp3.Call;
@@ -139,6 +140,9 @@ public class OpenDataService {
                 try {
                     JsonParser parser = new JsonParser();
                     ArrayList<ActivityInfo> datas = null;
+                    //加入ArrayList用來儲存圖片URL
+                    ArrayList<ActivityPicInfo> picDatas = null;
+                    picDatas = new ArrayList<ActivityPicInfo>();
 
                     JsonObject root = parser.parse(result).getAsJsonObject();
 
@@ -146,7 +150,6 @@ public class OpenDataService {
                     //如果從JSON取得的資料不為空，便執行
                     if (arrayResults != null) {
                         //利用JsonArray.size()得到項目總數，逐項檢查
-
                         for(int i = 0; i < arrayResults.size(); i++){
                             //再宣告一個JsonObject來讀取內層的Json資料
                             JsonObject obj = arrayResults.get(i).getAsJsonObject();
@@ -155,21 +158,16 @@ public class OpenDataService {
                                 if(obj.get("img") != null){
                                     //從已建立的JsonObject中讀取「img」這項，並存成JsonArray
                                     JsonArray imgUrl = obj.get("img").getAsJsonArray();
-                                    //設定一個用來儲存活動圖片網址的字串陣列，利用imgUrl.size()來確認「imgUrl」這項有幾組資料
-                                    String activityPicUrl[][] = new String[arrayResults.size()][imgUrl.size()];
-                                    //使用get(i)來取得第(i+1)張圖的相關資料
-                                    for(int j = 0;j < imgUrl.size();j++){
-                                        activityPicUrl[i][j] = imgUrl.get(j).getAsJsonObject().get("imgurl").toString();
-                                        Log.v("URL"+i+j,""+imgUrl.get(j).getAsJsonObject().get("imgurl"));
-                                    }
+                                    //存入第一張圖片的url
+                                    picDatas.add(new ActivityPicInfo(imgUrl.get(0).getAsJsonObject().get("imgurl").toString()));
                                 }
+                                callback.onGetPicRestlt(picDatas);
                             }
                             //如果「img」這項為空
                             catch (Exception e){
-                                e.printStackTrace();
+
                             }
                         }
-
                         Gson gson = new Gson();
                         Type collectionType = new TypeToken<List<ActivityInfo>>() {
                         }.getType();
@@ -204,6 +202,7 @@ public class OpenDataService {
 
     public interface GetActivityInfoResponse{
         void onGetRestlt(ArrayList<ActivityInfo> result);
+        void onGetPicRestlt(ArrayList<ActivityPicInfo> picResult);
         void onFail(Exception ex);
     }
 }

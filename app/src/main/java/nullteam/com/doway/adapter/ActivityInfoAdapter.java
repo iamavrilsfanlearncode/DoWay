@@ -12,19 +12,26 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.ArrayList;
 
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.ActivityInfoDetail;
+import nullteam.com.doway.fragment.ActivityInfoFragment;
 import nullteam.com.doway.model.ActivityInfo;
+import nullteam.com.doway.model.ActivityPicInfo;
 
 public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapter.ViewHolder>{
     private ArrayList<ActivityInfo> datas;
     private Fragment mFragment;
+    //加入圖片url用的ArrayList
+    private ArrayList<ActivityPicInfo> picDatas;
 
-    public ActivityInfoAdapter(Fragment fragment,ArrayList<ActivityInfo> datas) {
+    public ActivityInfoAdapter(Fragment fragment,ArrayList<ActivityInfo> datas,ArrayList<ActivityPicInfo> picDatas) {
         mFragment = fragment;
         this.datas = datas;
+        this.picDatas = picDatas;
     }
 
     @NonNull
@@ -47,6 +54,10 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
 
         //取得datasourceunit文字
         holder.dsuTextView.setText(datas.get(position).getDatasourceunit());
+        if (!picDatas.get(position).getImgurl().isEmpty()){
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(picDatas.get(position).getImgurl(), holder.picImageView);
+        }
     }
 
     @Override
@@ -56,6 +67,11 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
 
     public void setDatas(ArrayList<ActivityInfo> datas) {
         this.datas = datas;
+        notifyDataSetChanged();
+    }
+
+    public void setPicDatas(ArrayList<ActivityPicInfo> picDatas) {
+        this.picDatas = picDatas;
         notifyDataSetChanged();
     }
 

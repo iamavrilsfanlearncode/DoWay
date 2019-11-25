@@ -7,49 +7,66 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.util.ArrayList;
+
 import nullteam.com.doway.R;
-public class CustomGrid extends BaseAdapter {
-    private Context context;
-    private final String[]text;
-    private final int[]imageId;
+import nullteam.com.doway.model.Restaurant;
+
+public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
+    private ArrayList<Restaurant> datas;
+    private Fragment mFragment;
+
+    public CustomGrid(Fragment mFragment,ArrayList<Restaurant> datas) {
+        this.datas = datas;
+        this.mFragment = mFragment;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.grid_layout,parent,false);
+        ViewHolder vh = new ViewHolder(v);
+        return vh;
+    }
 
 
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Restaurant data = datas.get(position);
+        holder.nameTextView.setText(data.getName());
+        holder.restaurant = data;
 
-    public CustomGrid(Context context, String[] text, int[] imageId) {
-        this.context = context;
-        this.text = text;
-        this.imageId = imageId;
+
     }
 
     @Override
-    public int getCount() {
-        return text.length;
+    public int getItemCount() {return datas.size();}
+
+    public void setDatas(ArrayList<Restaurant>datas){
+        this.datas = datas;
+        notifyDataSetChanged();
     }
 
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView nameTextView;
+        de.hdodenhof.circleimageview.CircleImageView picImageView;
+        Restaurant restaurant;
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View grid;
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if(convertView == null){
-            grid = new View(context);
-            grid = layoutInflater.inflate(R.layout.grid_layout,null);
-            TextView textView = (TextView) grid.findViewById(R.id.grid_text);
-            ImageView imageView = (ImageView) grid.findViewById(R.id.grid_image);
-            textView.setText(text[position]);
-            imageView.setImageResource(imageId[position]);
-        }else {
-            grid = (View) convertView;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            nameTextView = itemView.findViewById(R.id.Subject);
+            picImageView = itemView.findViewById(R.id.Pic);
         }
-        return grid;
     }
 }
+

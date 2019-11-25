@@ -98,6 +98,7 @@ public class OpenDataService {
                     Gson gson = new Gson();
                     Type collectionType = new TypeToken<List<Restaurant>>() { }.getType();
                     datas = gson.fromJson(arrayResults, collectionType);
+                    datas = gson.fromJson(arrayResults, collectionType);
                 }
                 callback.onGetRestlt(datas);
             }

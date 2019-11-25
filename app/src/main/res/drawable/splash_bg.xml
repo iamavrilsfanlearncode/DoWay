@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
+
+    <item android:drawable="@android:color/white"/>
+
+    <item>
+        <bitmap
+            android:src="@drawable/nulllogo_round"
+            android:gravity="center"/>
+    </item>
+    <item>
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+
+            android:text="2019"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="16sp" />
+
+    </item>
+
+</layer-list>

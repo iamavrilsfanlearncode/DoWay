@@ -85,7 +85,7 @@ public class GridViewFragment extends Fragment {
         }, 2000, 2000, TimeUnit.MILLISECONDS);
 
         //加入ProgressDialog
-        DialogHelper.showProgressDialog(getActivity(), "更新餐廳列表");
+        DialogHelper.showProgressDialog(getActivity(), "請稍候");
         OpenDataService.getInstance().GetRestaurant(new OpenDataService.GetRestaurantResponse(){
             @Override
             public void onGetRestlt(final ArrayList<Restaurant> result) {

@@ -1,10 +1,13 @@
 package nullteam.com.doway.slide;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,32 +21,40 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 
 import nullteam.com.doway.R;
+import nullteam.com.doway.activity.RestaurantDetail;
+import nullteam.com.doway.adapter.RestaurantAdapter;
+import nullteam.com.doway.model.GridView;
 import nullteam.com.doway.model.Restaurant;
 
 public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
-    private ArrayList<Restaurant> datas;
+    private ArrayList<GridView> datas;
     private Fragment mFragment;
 
-    public CustomGrid(Fragment mFragment,ArrayList<Restaurant> datas) {
+    public CustomGrid(Fragment fragment, ArrayList<GridView> datas) {
+        mFragment = fragment;
         this.datas = datas;
-        this.mFragment = mFragment;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.grid_layout,parent,false);
-        ViewHolder vh = new ViewHolder(v);
+                .inflate(R.layout.grid_layout, parent, false);
+        CustomGrid.ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Restaurant data = datas.get(position);
+        GridView data = datas.get(position);
         holder.nameTextView.setText(data.getName());
-        holder.restaurant = data;
+        holder.gridView = data;
+
+        if (!data.getPicURL().isEmpty()){
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(datas.get(position).getPicURL(), holder.picImageView);
+        }
 
 
     }
@@ -51,21 +62,33 @@ public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
     @Override
     public int getItemCount() {return datas.size();}
 
-    public void setDatas(ArrayList<Restaurant>datas){
+    public void setDatas(ArrayList<GridView> datas) {
         this.datas = datas;
         notifyDataSetChanged();
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
-        de.hdodenhof.circleimageview.CircleImageView picImageView;
-        Restaurant restaurant;
-
+        GridView gridView;
+        ImageView picImageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.Subject);
-            picImageView = itemView.findViewById(R.id.Pic);
+            nameTextView = itemView.findViewById(R.id.GridTxt);
+            picImageView = itemView.findViewById(R.id.GridImg);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    Bundle bag = new Bundle();
+                    bag.putSerializable("restaurant", gridView);
+                    intent.putExtras(bag);
+                    intent.setClass(mFragment.getActivity(), RestaurantDetail.class);
+                    mFragment.getActivity().startActivity(intent);
+                }
+            });
         }
     }
 }

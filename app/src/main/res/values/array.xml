@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="City">
+        <item>顯示全部</item>
         <item>基隆市</item>
         <item>新北市</item>
         <item>臺北市</item>

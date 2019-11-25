@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,16 +26,37 @@ import nullteam.com.doway.model.Restaurant;
 public class RestaurantFragment extends Fragment {
     private RecyclerView listView;
     private RestaurantAdapter adapter;
+    private Spinner spinnercity;
+    private TextView S_Txt;
+    private ArrayList<Restaurant> datas;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_restaurant, container, false);
-
+        S_Txt = root.findViewById(R.id.STxt);
+        spinnercity = root.findViewById(R.id.spinner);
         listView = root.findViewById(R.id.restaurant_List);
         ArrayList<Restaurant> result = new ArrayList<Restaurant>();
         adapter = new RestaurantAdapter(this, result);
+
+        //使用Spinner
+        ArrayAdapter<CharSequence> nAdapter = ArrayAdapter.createFromResource(
+                getActivity(), R.array.City, android.R.layout.simple_spinner_item );
+        nAdapter.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+        spinnercity.setAdapter(nAdapter);
+        spinnercity.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){
+            public void onItemSelected(AdapterView adapterView, View view, int position, long id){
+                String selectCity =  spinnercity.getSelectedItem().toString();
+                adapter.getFilter().filter(selectCity);
+            }
+            public void onNothingSelected(AdapterView arg0) {
+            }
+        });
+
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
         listView.setLayoutManager(layoutManager);
         listView.setAdapter(adapter);
 
@@ -45,8 +69,11 @@ public class RestaurantFragment extends Fragment {
                     @Override
                     public void run() {
                         if (result != null) {
+                            datas = result;
                             adapter.setDatas(result);
-                            adapter.notifyDataSetChanged();
+                            String selectCity =  spinnercity.getSelectedItem().toString();
+                            adapter.getFilter().filter(selectCity);
+                            //adapter.notifyDataSetChanged();
                         }
                     }
                 });

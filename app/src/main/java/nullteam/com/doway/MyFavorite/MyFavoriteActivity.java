@@ -6,12 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import java.util.ArrayList;
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.RestaurantDetail;
@@ -83,7 +81,6 @@ public class MyFavoriteActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         boolean is_deleted = myFavDbAdapter.deleteMyFavRestaurant(item_id);
                         if(is_deleted){
-                            Toast.makeText(MyFavoriteActivity.this,"已取消收藏！", Toast.LENGTH_SHORT).show();
                             restaurants = new ArrayList<>();
                             displayList();
                         }

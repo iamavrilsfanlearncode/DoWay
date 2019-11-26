@@ -29,7 +29,6 @@ public class ActivityInfoDetail extends AppCompatActivity {
 
         //文字部份
         activityInfo = (ActivityInfo) getIntent().getSerializableExtra("activityInfo");
-
         tv_Subject = findViewById(R.id.Subject);
         tv_Subject.setText(activityInfo.getSubject());
         tv_activitytime = findViewById(R.id.activitytime);

@@ -42,7 +42,15 @@ public class Hotel implements Serializable {
     private int _id;
     private String Parkinginfo;
     private String TYWebsite;
+    private String imageUrl;
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getWebsite() {
         return Website;

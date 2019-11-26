@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -13,22 +12,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.ArrayList;
 
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.HotelDetail;
-import nullteam.com.doway.activity.RestaurantDetail;
 import nullteam.com.doway.model.Hotel;
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
     private ArrayList<Hotel> datas;
     private Fragment mFragment;
 
-
     public HotelAdapter(Fragment fragment, ArrayList<Hotel> datas) {
         mFragment = fragment;
         this.datas = datas;
-
     }
 
     @NonNull
@@ -38,7 +36,6 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
                 .inflate(R.layout.item_hotel, parent, false);
         HotelAdapter.ViewHolder vh = new ViewHolder(v);
         return vh;
-
     }
 
     @Override
@@ -49,8 +46,16 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
         holder.addTextView.setText(data.getAdd());
         holder.TelTextView.setText(data.getTel());
         holder.hotel = data;
-
-
+        //如果URL不為空，就顯示從URL載下來的圖片
+        try{
+            if (!data.getImageUrl().isEmpty()){
+                ImageLoader imageLoader = ImageLoader.getInstance();
+                imageLoader.displayImage(data.getImageUrl(), holder.picImageView);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -34,8 +35,7 @@ public class GridViewFragment extends Fragment {
     GridLayoutManager layoutManager;
     private CustomGrid adapter;
 
-   //private int iconId[] = {R.drawable.aa, R.drawable.bb, R.drawable.cc, R.drawable.dd, R.drawable.ee, R.drawable.ff};
-   //private String nameList[] = {"十股糖仁文創園區", "國家歌劇院", "傳統藝術中心", "清水斷崖", "奇美博物館", "六福村"};
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,13 +44,11 @@ public class GridViewFragment extends Fragment {
         listview = root.findViewById(R.id.Gridrecycler);
         ArrayList<GridView> result = new ArrayList<GridView>();
         adapter = new CustomGrid(this,result);
-        final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager = new GridLayoutManager(getActivity(),2);
         listview.setHasFixedSize(true);
         listview.setLayoutManager(layoutManager);
         listview.setAdapter(adapter);
-        // CustomGrid customGrid = new CustomGrid(getActivity(),iconId,nameList);
-        //listview.setAdapter(adapter);
+
 
         //加入ProgressDialog
         DialogHelper.showProgressDialog(getActivity(), "請稍候");
@@ -82,13 +80,13 @@ public class GridViewFragment extends Fragment {
 
 
        list.add(R.drawable.aaa);
-        list.add(R.drawable.b);
+       list.add(R.drawable.b);
        list.add(R.drawable.c);
 
-       final ViewPagerAdapter adapter = new ViewPagerAdapter(list, getActivity());
-       final RecyclerView recyclerView = root.findViewById(R.id.recycler);
-        final SmoothLinearLayoutManager smoothLinearLayoutManager = new SmoothLinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(smoothLinearLayoutManager);
+        final ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity(),list);
+        final RecyclerView recyclerView = root.findViewById(R.id.recycler);
+        final SmoothLinearLayoutManager layoutManager = new SmoothLinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         recyclerView.scrollToPosition(list.size() * 10);

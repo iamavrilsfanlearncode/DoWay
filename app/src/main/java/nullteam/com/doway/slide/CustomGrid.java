@@ -81,12 +81,7 @@ public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent();
-                    Bundle bag = new Bundle();
-                    bag.putSerializable("restaurant", gridView);
-                    intent.putExtras(bag);
-                    intent.setClass(mFragment.getActivity(), RestaurantDetail.class);
-                    mFragment.getActivity().startActivity(intent);
+                  Toast.makeText(v.getContext(),"你選了"+getAdapterPosition(),Toast.LENGTH_SHORT).show();
                 }
             });
         }

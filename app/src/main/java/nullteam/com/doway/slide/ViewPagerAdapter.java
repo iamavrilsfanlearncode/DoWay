@@ -20,12 +20,11 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewHolder> {
-    private ArrayList<Restaurant> datas;
+public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewHolder> { ;
     private List<Integer>list;
     private Context context;
 
-    public ViewPagerAdapter(List<Integer> list, Context context) {
+    public ViewPagerAdapter(Context context,List<Integer> list) {
         this.list = list;
         this.context = context;
     }
@@ -48,10 +47,6 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         return Integer.MAX_VALUE;
     }
 
-    public void setDatas(ArrayList<Restaurant> result) {
-        this.datas = datas;
-        notifyDataSetChanged();
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;

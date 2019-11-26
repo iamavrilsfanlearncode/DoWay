@@ -21,6 +21,7 @@
         <activity android:name=".activity.RestaurantDetail" />
         <activity android:name=".activity.HotelDetail" />
         <activity android:name=".activity.ActivityInfoDetail" />
+        <activity android:name=".activity.GridviewDetail" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

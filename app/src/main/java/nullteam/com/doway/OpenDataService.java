@@ -162,6 +162,34 @@ public class OpenDataService {
         });
     }
 
+    public void GetActivityPicInfo(final GetActivityPicInfoResponse callback){
+        GetJson("https://projectnull.000webhostapp.com/Image/ActivityImageUrl.json", new CallbackResponse() {
+            @Override
+            public void onResponse(String result) {
+                try{
+                    JsonParser parser = new JsonParser();
+                    ArrayList<ActivityInfo> picDatas = null;
+                    JsonArray arrayResults = new JsonParser().parse(result).getAsJsonArray();
+
+                    if (arrayResults != null) {
+                        Gson gson = new Gson();
+                        Type collectionType = new TypeToken<List<ActivityInfo>>() {
+                        }.getType();
+                        picDatas = gson.fromJson(arrayResults, collectionType);
+                    }
+                    callback.onGetRestlt(picDatas);
+                }
+                catch (Exception ex) {
+                    callback.onFail(ex);
+                }
+            }
+            @Override
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
+            }
+        });
+    }
+
     public interface CallbackResponse {
         void onResponse(String result);
         void onFail(Exception ex);
@@ -179,6 +207,11 @@ public class OpenDataService {
 
     public interface GetActivityInfoResponse{
         void onGetRestlt(ArrayList<ActivityInfo> result);
+        void onFail(Exception ex);
+    }
+
+    public interface GetActivityPicInfoResponse{
+        void onGetRestlt(ArrayList<ActivityInfo> picResult);
         void onFail(Exception ex);
     }
 }

@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.ActivityInfo;
@@ -37,7 +39,10 @@ public class ActivityInfoDetail extends AppCompatActivity {
         tv_detailcontent = findViewById(R.id.detailcontent);
         tv_detailcontent.setText(activityInfo.getDetailcontent());
 
+        // 詳細頁圖片
         iv_Default = findViewById(R.id.Default);
+
+
 
         //按鈕部分
         //返回

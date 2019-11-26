@@ -13,13 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.ActivityInfo;
-import nullteam.com.doway.model.ActivityPicInfo;
 
 public class ActivityInfoDetail extends AppCompatActivity {
     private ActivityInfo activityInfo;
     private TextView tv_Subject,tv_activitytime,tv_activityaddress,tv_detailcontent;
     private Button btn_Back,btn_Favorite;
-    private ActivityPicInfo activityPicInfo;
     private ImageView iv_Default;
 
     @Override
@@ -29,8 +27,6 @@ public class ActivityInfoDetail extends AppCompatActivity {
 
         //文字部份
         activityInfo = (ActivityInfo) getIntent().getSerializableExtra("activityInfo");
-        //圖片部份
-        activityPicInfo = (ActivityPicInfo) getIntent().getSerializableExtra("activityPicInfo");
 
         tv_Subject = findViewById(R.id.Subject);
         tv_Subject.setText(activityInfo.getSubject());

@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,17 +17,14 @@ import java.util.ArrayList;
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.ActivityInfoDetail;
 import nullteam.com.doway.model.ActivityInfo;
-import nullteam.com.doway.model.ActivityPicInfo;
 
 public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapter.ViewHolder>{
     private ArrayList<ActivityInfo> datas;
     private Fragment mFragment;
-    private ArrayList<ActivityPicInfo> picDatas;
 
-    public ActivityInfoAdapter(Fragment fragment,ArrayList<ActivityInfo> datas,ArrayList<ActivityPicInfo> picDatas) {
+    public ActivityInfoAdapter(Fragment fragment,ArrayList<ActivityInfo> datas) {
         mFragment = fragment;
         this.datas = datas;
-        this.picDatas = picDatas;
     }
 
     @NonNull
@@ -64,11 +59,6 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
         notifyDataSetChanged();
     }
 
-    public void setPicDatas(ArrayList<ActivityPicInfo> picDatas) {
-        this.picDatas = picDatas;
-        notifyDataSetChanged();
-    }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView subjectTextView, atTextView, addTextView,dsuTextView;
         ImageButton but_detail;
@@ -76,7 +66,6 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
         de.hdodenhof.circleimageview.CircleImageView picImageView;
 
         ActivityInfo activityInfo;
-        ActivityPicInfo activityPicInfo;
 
         public ViewHolder(View view) {
             super(view);
@@ -94,7 +83,6 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
                     Intent intent = new Intent();
                     Bundle bag = new Bundle();
                     bag.putSerializable("activityInfo", activityInfo);
-                    bag.putSerializable("activityPicInfo", activityPicInfo);
                     intent.putExtras(bag);
                     intent.setClass(mFragment.getActivity(), ActivityInfoDetail.class);
                     mFragment.getActivity().startActivity(intent);

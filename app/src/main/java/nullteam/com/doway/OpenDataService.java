@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 import nullteam.com.doway.model.ActivityInfo;
 import nullteam.com.doway.model.Hotel;
 import nullteam.com.doway.model.Restaurant;
-import nullteam.com.doway.model.ActivityPicInfo;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -163,34 +162,6 @@ public class OpenDataService {
         });
     }
 
-    public void GetActivityPicInfo(final GetActivityPicInfoResponse callback){
-        GetJson("https://projectnull.000webhostapp.com/Image/ActivityImageUrl.json", new CallbackResponse(){
-            @Override
-            public void onResponse(String result) {
-                try{
-                    JsonParser parser = new JsonParser();
-                    ArrayList<ActivityPicInfo> picDatas = null;
-                    JsonArray arrayResults = new JsonParser().parse(result).getAsJsonArray();
-
-                    if (arrayResults != null) {
-                        Gson gson = new Gson();
-                        Type collectionType = new TypeToken<List<ActivityPicInfo>>() {
-                        }.getType();
-                        picDatas = gson.fromJson(arrayResults, collectionType);
-                    }
-                    callback.onGetPicRestlt(picDatas);
-                }
-                catch (Exception ex2) {
-                    callback.onFail(ex2);
-                }
-            }
-            @Override
-            public void onFail(Exception ex2) {
-                callback.onFail(ex2);
-            }
-        });
-    }
-
     public interface CallbackResponse {
         void onResponse(String result);
         void onFail(Exception ex);
@@ -209,10 +180,5 @@ public class OpenDataService {
     public interface GetActivityInfoResponse{
         void onGetRestlt(ArrayList<ActivityInfo> result);
         void onFail(Exception ex);
-    }
-
-    public interface GetActivityPicInfoResponse{
-        void onGetPicRestlt(ArrayList<ActivityPicInfo> result);
-        void onFail(Exception ex2);
     }
 }

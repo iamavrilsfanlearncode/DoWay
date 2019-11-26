@@ -41,8 +41,16 @@ public class ActivityInfoDetail extends AppCompatActivity {
 
         // 詳細頁圖片
         iv_Default = findViewById(R.id.Default);
-
-
+        // 如果取得的圖片URL不為空值，就將原有的預設圖片覆蓋掉
+        try{
+            if (!activityInfo.getImageUrl().isEmpty()){
+                ImageLoader imageLoader = ImageLoader.getInstance();
+                imageLoader.displayImage(activityInfo.getImageUrl(), iv_Default);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
         //按鈕部分
         //返回

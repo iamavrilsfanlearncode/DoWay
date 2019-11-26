@@ -49,9 +49,6 @@ public class ActivityInfoFragment extends Fragment {
                     public void run() {
                         if(picResult != null){
                             picInfo = picResult;
-                            for(int i = 0;i < picResult.size();i++) {
-                                Log.d("Pic_result", picResult.get(i).getImageUrl().toString());
-                            }
                         }
                     }
                 });

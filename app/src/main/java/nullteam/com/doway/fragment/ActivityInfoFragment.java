@@ -20,6 +20,7 @@ import nullteam.com.doway.Utils.DialogHelper;
 import nullteam.com.doway.adapter.ActivityInfoAdapter;
 
 import nullteam.com.doway.model.ActivityInfo;
+import nullteam.com.doway.model.ActivityPicInfo;
 
 
 public class ActivityInfoFragment extends Fragment {
@@ -31,7 +32,8 @@ public class ActivityInfoFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_activityinfo, container, false);
         listView = root.findViewById(R.id.activityinfo_List);
         ArrayList<ActivityInfo> result = new ArrayList<ActivityInfo>();
-        adapter = new ActivityInfoAdapter(this,result);
+        ArrayList<ActivityPicInfo> picResult = new ArrayList<ActivityPicInfo>();
+        adapter = new ActivityInfoAdapter(this,result,picResult);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         listView.setLayoutManager(layoutManager);
@@ -65,6 +67,31 @@ public class ActivityInfoFragment extends Fragment {
                 });
             }
         });
+
+        OpenDataService.getInstance().GetActivityPicInfo(new OpenDataService.GetActivityPicInfoResponse(){
+            @Override
+            public void onGetPicRestlt(final ArrayList<ActivityPicInfo> result) {
+                getActivity().runOnUiThread(new Runnable(){
+                    @Override
+                    public void run() {
+                        if (result != null) {
+                            adapter.setPicDatas(result);
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
+            }
+            @Override
+            public void onFail(final Exception ex2) {
+                getActivity().runOnUiThread(new Runnable(){
+                    @Override
+                    public void run() {
+                        Toast.makeText(getActivity(), ex2.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
+
         return root;
     }
 }

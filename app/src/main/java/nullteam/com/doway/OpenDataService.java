@@ -164,7 +164,7 @@ public class OpenDataService {
     }
 
     public void GetActivityPicInfo(final GetActivityPicInfoResponse callback){
-        GetJson("", new CallbackResponse(){
+        GetJson("https://projectnull.000webhostapp.com/Image/ActivityImageUrl.json", new CallbackResponse(){
             @Override
             public void onResponse(String result) {
                 try{

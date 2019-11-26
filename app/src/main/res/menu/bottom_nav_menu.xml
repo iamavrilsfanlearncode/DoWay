@@ -24,5 +24,9 @@
         android:id="@+id/navigation_activityinfo"
         android:icon="@mipmap/ic_info"
         android:title="@string/title_notifications" />
+  <item
+      android:id="@+id/navigation_about"
+      android:icon="@mipmap/ic_about"
+      android:title="@string/about" />
 
 </menu>

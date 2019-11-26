@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class ActivityInfoDetail extends AppCompatActivity {
     private TextView tv_Subject,tv_activitytime,tv_activityaddress,tv_detailcontent;
     private Button btn_Back,btn_Favorite;
     private ActivityPicInfo activityPicInfo;
+    private ImageView iv_Default;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,9 @@ public class ActivityInfoDetail extends AppCompatActivity {
         tv_activityaddress.setText(activityInfo.getActivityaddress());
         tv_detailcontent = findViewById(R.id.detailcontent);
         tv_detailcontent.setText(activityInfo.getDetailcontent());
+
+        iv_Default = findViewById(R.id.Default);
+
         //按鈕部分
         //返回
         btn_Back = findViewById(R.id.BtnBack);

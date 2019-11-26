@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import nullteam.com.doway.model.ActivityInfo;
+import nullteam.com.doway.model.GridView;
 import nullteam.com.doway.model.Hotel;
 import nullteam.com.doway.model.Restaurant;
 import okhttp3.Call;
@@ -98,6 +99,7 @@ public class OpenDataService {
                     Gson gson = new Gson();
                     Type collectionType = new TypeToken<List<Restaurant>>() { }.getType();
                     datas = gson.fromJson(arrayResults, collectionType);
+                    datas = gson.fromJson(arrayResults, collectionType);
                 }
                 callback.onGetRestlt(datas);
             }
@@ -161,6 +163,27 @@ public class OpenDataService {
         });
     }
 
+    public void GetGridView(final  GetGridViewResponse callback) {
+        GetJson("http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx", new CallbackResponse() {
+            @Override
+            public void onResponse(String result) {
+                ArrayList<GridView> datas = null;
+                JsonArray arrayResults = new JsonParser().parse(result).getAsJsonArray();
+                if (arrayResults != null) {
+                    Gson gson = new Gson();
+                    Type collectionType = new TypeToken<List<GridView>>() { }.getType();
+                    datas = gson.fromJson(arrayResults, collectionType);
+                    datas = gson.fromJson(arrayResults, collectionType);
+                }
+                callback.onGetRestlt(datas);
+            }
+
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
+            }
+        });
+    }
+
     public interface CallbackResponse {
         void onResponse(String result);
         void onFail(Exception ex);
@@ -178,6 +201,10 @@ public class OpenDataService {
 
     public interface GetActivityInfoResponse{
         void onGetRestlt(ArrayList<ActivityInfo> result);
+        void onFail(Exception ex);
+    }
+    public interface GetGridViewResponse{
+        void onGetRestlt(ArrayList<GridView> result);
         void onFail(Exception ex);
     }
 }

@@ -127,6 +127,18 @@
                     android:gravity="center"
                     android:text="@string/BtnBack"
                     android:textColor="@color/green" />
+                <Button
+                    android:id="@+id/BtnFavorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/gradual2"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="@string/BtnFavorite"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

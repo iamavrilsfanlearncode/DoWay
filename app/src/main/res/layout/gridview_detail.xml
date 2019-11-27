@@ -43,17 +43,6 @@
                         android:layout_weight="9"
                         android:textSize="26sp" />
 
-                    <ImageButton
-                        android:id="@+id/BtnFavorite"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@mipmap/ic_like"
-                        android:fontFamily="sans-serif-black"
-                        android:gravity="center"
-                        android:textColor="@color/white" />
-
                 </LinearLayout>
 
             </LinearLayout>

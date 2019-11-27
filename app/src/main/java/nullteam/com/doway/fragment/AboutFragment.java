@@ -1,11 +1,12 @@
 package nullteam.com.doway.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +15,11 @@ import nullteam.com.doway.R;
 
 public class AboutFragment extends Fragment {
     ImageButton btn_share, btn_scan, btn_qrCode;
-    ImageView img_cela, img_george, img_lula, img_polly;
+    ImageButton mail_cela, mail_george, mail_lula, mail_polly;
+    ImageButton github_cela, github_george, github_lula, github_polly;
+    ImageButton phone_cela, phone_george, phone_lula, phone_polly;
+    Uri uri;
+    Intent intent;
 
     @Nullable
     @Override
@@ -26,17 +31,11 @@ public class AboutFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        btn_share = getActivity().findViewById(R.id.btnShare);
-        btn_scan = getActivity().findViewById(R.id.btnScan);
-        btn_qrCode = getActivity().findViewById(R.id.btnQrCode);
+        init(); // 初始化介面元件
 
-        img_cela = getActivity().findViewById(R.id.imgCela);
-        img_george = getActivity().findViewById(R.id.imgGeorge);
-        img_lula = getActivity().findViewById(R.id.imgLula);
-        img_polly = getActivity().findViewById(R.id.imgPolly);
-
-        // 添加按鈕的監聽事件
+        // ---- 添加按鈕的監聽事件 START --- //
         btn_share.setOnClickListener(new View.OnClickListener() {
+            // 分享 APP 給親朋好友
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Clicked btnShare", Toast.LENGTH_LONG).show();
@@ -44,6 +43,7 @@ public class AboutFragment extends Fragment {
         });
 
         btn_scan.setOnClickListener(new View.OnClickListener() {
+            // 掃描 APP 的 QR Code 取得原始碼
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Clicked btnScan", Toast.LENGTH_LONG).show();
@@ -51,10 +51,172 @@ public class AboutFragment extends Fragment {
         });
 
         btn_qrCode.setOnClickListener(new View.OnClickListener() {
+            // 生成自己的 QR Code
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Clicked btnQrCode", Toast.LENGTH_LONG).show();
+
             }
         });
+
+        mail_cela.setOnClickListener(new View.OnClickListener() {
+            // 寄信給 Cela
+            @Override
+            public void onClick(View v) {
+                intent = new Intent();
+                intent.setAction(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:iamavrilsfan@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "請輸入主旨");
+                intent.putExtra(Intent.EXTRA_TEXT, "請輸入信件內容");
+                startActivity(intent);
+            }
+        });
+
+        mail_george.setOnClickListener(new View.OnClickListener() {
+            // 寄信給 George
+            @Override
+            public void onClick(View v) {
+                intent = new Intent();
+                intent.setAction(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:georgecycuphy@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "請輸入主旨");
+                intent.putExtra(Intent.EXTRA_TEXT, "請輸入信件內容");
+                startActivity(intent);
+            }
+        });
+
+        mail_lula.setOnClickListener(new View.OnClickListener() {
+            // 寄信給 Lula
+            @Override
+            public void onClick(View v) {
+                intent = new Intent();
+                intent.setAction(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:windandsprings@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "請輸入主旨");
+                intent.putExtra(Intent.EXTRA_TEXT, "請輸入信件內容");
+                startActivity(intent);
+            }
+        });
+
+        mail_polly.setOnClickListener(new View.OnClickListener() {
+            // 寄信給 Polly
+            @Override
+            public void onClick(View v) {
+                intent = new Intent();
+                intent.setAction(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:yupollys654020@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "請輸入主旨");
+                intent.putExtra(Intent.EXTRA_TEXT, "請輸入信件內容");
+                startActivity(intent);
+            }
+        });
+
+        github_cela.setOnClickListener(new View.OnClickListener() {
+            // 連到 Cela 的 GitHub
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://github.com/iamavrilsfanlearncode");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        github_george.setOnClickListener(new View.OnClickListener() {
+            // 連到 George 的 GitHub
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://github.com/George-Tseng");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        github_lula.setOnClickListener(new View.OnClickListener() {
+            // 連到 Lula 的 GitHub
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://github.com/LulaKao");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        github_polly.setOnClickListener(new View.OnClickListener() {
+            // 連到 Polly 的 GitHub
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("https://github.com/PollyWu0413");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        phone_cela.setOnClickListener(new View.OnClickListener() {
+            // 打電話給 Cela
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("tel:"+"0910271361");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        phone_george.setOnClickListener(new View.OnClickListener() {
+            // 打電話給 George
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("tel:"+"0911954504");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        phone_lula.setOnClickListener(new View.OnClickListener() {
+            // 打電話給 Lula
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("tel:"+"0970951857");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        phone_polly.setOnClickListener(new View.OnClickListener() {
+            // 打電話給 Polly
+            @Override
+            public void onClick(View v) {
+                uri = Uri.parse("tel:"+"0930296255");
+                intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+        // ---- 添加按鈕的監聽事件 END --- //
+    }
+
+
+    // 初始化介面元件
+    private void init() {
+
+        // 關於 APP
+        btn_share = getActivity().findViewById(R.id.btnShare);
+        btn_scan = getActivity().findViewById(R.id.btnScan);
+        btn_qrCode = getActivity().findViewById(R.id.btnQrCode);
+
+        // E-mail 聯絡
+        mail_cela = getActivity().findViewById(R.id.mail_cela);
+        mail_george = getActivity().findViewById(R.id.mail_george);
+        mail_lula = getActivity().findViewById(R.id.mail_lula);
+        mail_polly = getActivity().findViewById(R.id.mail_polly);
+
+        // 連結到 GitHub
+        github_cela = getActivity().findViewById(R.id.github_cela);
+        github_george = getActivity().findViewById(R.id.github_george);
+        github_lula = getActivity().findViewById(R.id.github_lula);
+        github_polly = getActivity().findViewById(R.id.github_polly);
+
+        // 開啟手機內建打電話的功能
+        phone_cela = getActivity().findViewById(R.id.phone_cela);
+        phone_george = getActivity().findViewById(R.id.phone_george);
+        phone_lula = getActivity().findViewById(R.id.phone_lula);
+        phone_polly = getActivity().findViewById(R.id.phone_polly);
     }
 }

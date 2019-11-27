@@ -15,7 +15,7 @@
     <string name="version">1.0.0</string>
     <string name="share">推薦【兜we】給親朋好友 ❤</string>
     <string name="QRCode">QR Code 掃描取得 APP 原始碼</string>
-    <string name="get_QRCode">生成你的專屬的 QR Code 🙋</string>
+    <string name="get_QRCode">產生你的專屬的 QR Code 🙋</string>
     <string name="about_team">開發團隊</string>
     <string name="name_cela">Cela Cheng</string>
     <string name="name_lula">Lula Kao</string>
@@ -26,7 +26,7 @@
     <string name="email_george">georgecycuphy@cycu.org.tw</string>
     <string name="email_polly">yupollys654020@gmai.com</string>
     <string name="scan_qrcode">☝ 掃描 QR Code 取得 APP 程式原始碼 ☝</string>
-    <string name="generate_qrcode">自動生成</string>
+    <string name="generate_qrcode">自動產生</string>
     <string name="https">https://</string>
-    <string name="edit_url">👇 輸入你想生成 QR Code 的網址 👇</string>
+    <string name="edit_url">👇 輸入你想產生 QR Code 的網址 👇</string>
 </resources>

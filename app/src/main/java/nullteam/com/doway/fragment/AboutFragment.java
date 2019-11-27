@@ -68,10 +68,10 @@ public class AboutFragment extends Fragment {
         });
 
         btn_qrCode.setOnClickListener(new View.OnClickListener() {
-            // 生成自己的 QR Code
+            // 產生自己的 QR Code
             @Override
             public void onClick(View v) {
-                // 跳到生成 QR Code 的頁面
+                // 跳到產生 QR Code 的頁面
                 intent = new Intent();
                 intent.setClass(v.getContext(), GenerateQRCode.class);
                 startActivity(intent);

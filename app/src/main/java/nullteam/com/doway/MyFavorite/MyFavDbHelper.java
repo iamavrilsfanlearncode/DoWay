@@ -24,7 +24,7 @@ public class MyFavDbHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    //  如果 Android 載入時找不到生成的資料庫檔案，就會觸發 onCreate
+    //  如果 Android 載入時找不到產生的資料庫檔案，就會觸發 onCreate
     public void onCreate(SQLiteDatabase db) {
         // 組裝建立資料表的 SQL 語法
         final String DATABASE_CREATE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" +

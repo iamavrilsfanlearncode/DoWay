@@ -47,7 +47,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'com.google.zxing:core:3.3.0'
     //--- END
-    //---生成自己的 QRCode 到畫面上
+    //---產生自己的 QRCode 到畫面上
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'

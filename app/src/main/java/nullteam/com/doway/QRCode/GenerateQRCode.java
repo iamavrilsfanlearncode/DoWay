@@ -37,13 +37,12 @@ public class GenerateQRCode extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.BtnGenerate:
-                // 生成 QR Code
+                // 產生 QR Code
                 getCode();
                 break;
             case R.id.BtnBack:
                 // 跳回首頁
-                intent = new Intent();
-                intent.setClass(GenerateQRCode.this, MainActivity.class);
+                intent = new Intent(GenerateQRCode.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 break;

@@ -38,7 +38,18 @@ public class AboutFragment extends Fragment {
             // 分享 APP 給親朋好友
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Clicked btnShare", Toast.LENGTH_LONG).show();
+                shareTo("兜we - 讓我們兜在一起❤",
+                        "https://github.com/iamavrilsfanlearncode/DoWay",
+                        "");
+            }
+
+            private void shareTo(String subject, String body, String chooserTitle) {
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, body);
+
+                startActivity(Intent.createChooser(sharingIntent, chooserTitle));
             }
         });
 
@@ -46,7 +57,7 @@ public class AboutFragment extends Fragment {
             // 掃描 APP 的 QR Code 取得原始碼
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Clicked btnScan", Toast.LENGTH_LONG).show();
+
             }
         });
 

@@ -133,6 +133,35 @@ public class OpenDataService {
         });
     }
 
+    //收集旅館相關圖片
+    public void GetPicHotel(final GetHotelPicResponse callback){
+        GetJson("https://projectnull.000webhostapp.com/Image/HotelImageUrl.json",new CallbackResponse(){
+            @Override
+            public void onResponse(String result) {
+                try{
+                    JsonParser parser = new JsonParser();
+                    ArrayList<Hotel> picDatas = null;
+                    JsonArray arrayResults = new JsonParser().parse(result).getAsJsonArray();
+
+                    if (arrayResults != null) {
+                        Gson gson = new Gson();
+                        Type collectionType = new TypeToken<List<ActivityInfo>>() {
+                        }.getType();
+                        picDatas = gson.fromJson(arrayResults, collectionType);
+                    }
+                    callback.onGetRestlt(picDatas);
+                }
+                catch (Exception ex) {
+                    callback.onFail(ex);
+                }
+            }
+            @Override
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
+            }
+        });
+    }
+
     public void GetActivityInfo(final GetActivityInfoResponse callback) {
         GetJson("https://data.tycg.gov.tw/api/v1/rest/datastore/3983e8e8-7a67-4bbd-b976-bb0cdb97e2f7?format=json", new CallbackResponse() {
             @Override
@@ -162,6 +191,35 @@ public class OpenDataService {
         });
     }
 
+    //收集活動相關圖片
+    public void GetActivityPicInfo(final GetActivityPicInfoResponse callback){
+        GetJson("https://projectnull.000webhostapp.com/Image/ActivityImageUrl.json", new CallbackResponse() {
+            @Override
+            public void onResponse(String result) {
+                try{
+                    JsonParser parser = new JsonParser();
+                    ArrayList<ActivityInfo> picDatas = null;
+                    JsonArray arrayResults = new JsonParser().parse(result).getAsJsonArray();
+
+                    if (arrayResults != null) {
+                        Gson gson = new Gson();
+                        Type collectionType = new TypeToken<List<ActivityInfo>>() {
+                        }.getType();
+                        picDatas = gson.fromJson(arrayResults, collectionType);
+                    }
+                    callback.onGetRestlt(picDatas);
+                }
+                catch (Exception ex) {
+                    callback.onFail(ex);
+                }
+            }
+            @Override
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
+            }
+        });
+    }
+
     public interface CallbackResponse {
         void onResponse(String result);
         void onFail(Exception ex);
@@ -173,12 +231,22 @@ public class OpenDataService {
     }
 
     public interface GetHotelResponse{
-        void onGetRestlt(ArrayList<Hotel> result);
+        void onGetRestlt(ArrayList<Hotel> picResult);
+        void onFail(Exception ex);
+    }
+
+    public interface GetHotelPicResponse{
+        void onGetRestlt(ArrayList<Hotel> picResult);
         void onFail(Exception ex);
     }
 
     public interface GetActivityInfoResponse{
         void onGetRestlt(ArrayList<ActivityInfo> result);
+        void onFail(Exception ex);
+    }
+
+    public interface GetActivityPicInfoResponse{
+        void onGetRestlt(ArrayList<ActivityInfo> picResult);
         void onFail(Exception ex);
     }
 }

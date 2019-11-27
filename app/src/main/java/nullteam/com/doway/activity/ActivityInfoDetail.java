@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.ActivityInfo;
@@ -27,7 +29,6 @@ public class ActivityInfoDetail extends AppCompatActivity {
 
         //文字部份
         activityInfo = (ActivityInfo) getIntent().getSerializableExtra("activityInfo");
-
         tv_Subject = findViewById(R.id.Subject);
         tv_Subject.setText(activityInfo.getSubject());
         tv_activitytime = findViewById(R.id.activitytime);
@@ -37,7 +38,18 @@ public class ActivityInfoDetail extends AppCompatActivity {
         tv_detailcontent = findViewById(R.id.detailcontent);
         tv_detailcontent.setText(activityInfo.getDetailcontent());
 
+        // 詳細頁圖片
         iv_Default = findViewById(R.id.Default);
+        // 如果取得的圖片URL不為空值，就將原有的預設圖片覆蓋掉
+        try{
+            if (!activityInfo.getImageUrl().isEmpty()){
+                ImageLoader imageLoader = ImageLoader.getInstance();
+                imageLoader.displayImage(activityInfo.getImageUrl(), iv_Default);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
         //按鈕部分
         //返回

@@ -55,7 +55,15 @@ public class ActivityInfo implements Serializable {
     private String joinunit;
     private String postunit;
     private String detailcontent;
-    private List<ImgBean> img;
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getPostdate() {
         return postdate;
@@ -223,49 +231,5 @@ public class ActivityInfo implements Serializable {
 
     public void setDetailcontent(String detailcontent) {
         this.detailcontent = detailcontent;
-    }
-
-    public List<ImgBean> getImg() {
-        return img;
-    }
-
-    public void setImg(List<ImgBean> img) {
-        this.img = img;
-    }
-
-    public static class ImgBean implements Serializable {
-        /**
-         * imgcontent : <br>小<br>提<br>琴<br>
-         * imgname : 122802.jpg
-         * imgurl : http://www.tycg.gov.tw/uploaddowndoc?file=activityhot/201911121542190.jpg&filedisplay=201911121542190.jpg&flag=pic
-         */
-
-        private String imgcontent;
-        private String imgname;
-        private String imgurl;
-
-        public String getImgcontent() {
-            return imgcontent;
-        }
-
-        public void setImgcontent(String imgcontent) {
-            this.imgcontent = imgcontent;
-        }
-
-        public String getImgname() {
-            return imgname;
-        }
-
-        public void setImgname(String imgname) {
-            this.imgname = imgname;
-        }
-
-        public String getImgurl() {
-            return imgurl;
-        }
-
-        public void setImgurl(String imgurl) {
-            this.imgurl = imgurl;
-        }
     }
 }

@@ -10,5 +10,19 @@
     <string name="title_homepage">首頁</string>
     <string name="noData">尚無收藏項目</string>
     <string name="about">關於</string>
-    <string name="about_doway">關於【兜we】</string>
+    <string name="about_app">關於 APP</string>
+    <string name="app_version">APP 版本</string>
+    <string name="version">1.0.0</string>
+    <string name="share">推薦【兜we】給親朋好友 ❤</string>
+    <string name="QRCode">QR Code 掃描取得 APP 原始碼</string>
+    <string name="get_QRCode">生成你的專屬的 QR Code 🙋</string>
+    <string name="about_team">開發團隊</string>
+    <string name="name_cela">Cela Cheng</string>
+    <string name="name_lula">Lula Kao</string>
+    <string name="name_george">George Tseng</string>
+    <string name="name_polly">Polly Wu</string>
+    <string name="email_cela">iamavrilsfan@gmai.com</string>
+    <string name="email_lula">windandsprings@gmail.com</string>
+    <string name="email_george">georgecycuphy@cycu.org.tw</string>
+    <string name="email_polly">yupollys654020@gmai.com</string>
 </resources>

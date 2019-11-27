@@ -49,50 +49,49 @@ public class ActivityInfoFragment extends Fragment {
                         if(picResult != null){
                             picInfo = picResult;
                         }
+                        OpenDataService.getInstance().GetActivityInfo(new OpenDataService.GetActivityInfoResponse(){
+                            @Override
+                            public void onGetRestlt(final ArrayList<ActivityInfo> result) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if (result != null) {
+                                            //將上個方法中得到的URL，利用setImageUrl存入同一個adapter中
+                                            for(int i = 0;i < result.size();i++) {
+                                                try{
+                                                    if(picInfo.get(i).getImageUrl() != null){
+                                                        result.get(i).setImageUrl(picInfo.get(i).getImageUrl());
+                                                    }
+                                                }
+                                                catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                            adapter.setDatas(result);
+                                            adapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onFail(final Exception ex) {
+                                DialogHelper.closeProgressDialog();
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                            }
+                        });
                     }
                 });
+                DialogHelper.closeProgressDialog();
             }
             @Override
             public void onFail(final Exception ex) {
                 getActivity().runOnUiThread(new Runnable(){
-                    @Override
-                    public void run() {
-                        Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });
-
-        OpenDataService.getInstance().GetActivityInfo(new OpenDataService.GetActivityInfoResponse(){
-            @Override
-            public void onGetRestlt(final ArrayList<ActivityInfo> result) {
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (result != null) {
-                            //將上個方法中得到的URL，利用setImageUrl存入同一個adapter中
-                            for(int i = 0;i < result.size();i++) {
-                                try{
-                                    if(picInfo.get(i).getImageUrl() != null){
-                                        result.get(i).setImageUrl(picInfo.get(i).getImageUrl());
-                                    }
-                                }
-                                catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            adapter.setDatas(result);
-                            adapter.notifyDataSetChanged();
-                        }
-                    }
-                });
-                DialogHelper.closeProgressDialog();
-            }
-
-            @Override
-            public void onFail(final Exception ex) {
-                DialogHelper.closeProgressDialog();
-                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();

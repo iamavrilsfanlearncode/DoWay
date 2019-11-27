@@ -4,23 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="5dp"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
 
     <ImageButton
         android:id="@+id/GridImg"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:padding="5dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/transparent"
+        android:paddingLeft="@dimen/cardview_compat_inset_shadow"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/GridTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:paddingLeft="5dp"
         android:text="TextView" />
 
 </LinearLayout>

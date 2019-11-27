@@ -48,44 +48,49 @@ public class HotelFragment extends Fragment {
                         if(picResult != null){
                             picHotel = picResult;
                         }
-                    }
-                });
-            }
-            @Override
-            public void onFail(Exception ex) {
-                Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        OpenDataService.getInstance().GetHotel(new OpenDataService.GetHotelResponse(){
-            @Override
-            public void onGetRestlt(final ArrayList<Hotel> result) {
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (result != null) {
-                            //將上個方法中得到的URL，利用setImageUrl存入同一個adapter中
-                            for(int i = 0;i < result.size();i++){
-                                try{
-                                    if(picHotel.get(i).getImageUrl() != null){
-                                        result.get(i).setImageUrl(picHotel.get(i).getImageUrl());
+                        OpenDataService.getInstance().GetHotel(new OpenDataService.GetHotelResponse(){
+                            @Override
+                            public void onGetRestlt(final ArrayList<Hotel> result) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if (result != null) {
+                                            //將上個方法中得到的URL，利用setImageUrl存入同一個adapter中
+                                            for(int i = 0;i < result.size();i++){
+                                                try{
+                                                    if(picHotel.get(i).getImageUrl() != null){
+                                                        result.get(i).setImageUrl(picHotel.get(i).getImageUrl());
+                                                    }
+                                                }
+                                                catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                            adapter.setDatas(result);
+                                            adapter.notifyDataSetChanged();
+                                        }
                                     }
-                                }
-                                catch (Exception e) {
-                                    e.printStackTrace();
-                                }
+                                });
+                                DialogHelper.closeProgressDialog();
                             }
-                            adapter.setDatas(result);
-                            adapter.notifyDataSetChanged();
-                        }
+
+                            @Override
+                            public void onFail(final Exception ex) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                            }
+                        });
                     }
                 });
                 DialogHelper.closeProgressDialog();
             }
-
             @Override
             public void onFail(final Exception ex) {
-                getActivity().runOnUiThread(new Runnable() {
+                getActivity().runOnUiThread(new Runnable(){
                     @Override
                     public void run() {
                         Toast.makeText(getActivity(), ex.getLocalizedMessage(), Toast.LENGTH_LONG).show();

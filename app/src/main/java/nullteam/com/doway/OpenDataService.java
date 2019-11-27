@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import nullteam.com.doway.model.ActivityInfo;
+import nullteam.com.doway.model.GridView;
 import nullteam.com.doway.model.Hotel;
 import nullteam.com.doway.model.Restaurant;
 
@@ -99,6 +100,7 @@ public class OpenDataService {
                     Gson gson = new Gson();
                     Type collectionType = new TypeToken<List<Restaurant>>() { }.getType();
                     datas = gson.fromJson(arrayResults, collectionType);
+                    datas = gson.fromJson(arrayResults, collectionType);
                 }
                 callback.onGetRestlt(datas);
             }
@@ -133,7 +135,7 @@ public class OpenDataService {
         });
     }
 
-    //收集旅館相關圖片
+//收集旅館相關圖片
     public void GetPicHotel(final GetHotelPicResponse callback){
         GetJson("https://projectnull.000webhostapp.com/Image/HotelImageUrl.json",new CallbackResponse(){
             @Override
@@ -191,6 +193,30 @@ public class OpenDataService {
         });
     }
 
+
+
+    public void GetGridView(final  GetGridViewResponse callback) {
+        GetJson("http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx", new CallbackResponse() {
+            @Override
+            public void onResponse(String result) {
+                ArrayList<GridView> datas = null;
+                JsonArray arrayResults = new JsonParser().parse(result).getAsJsonArray();
+                if (arrayResults != null) {
+                    Gson gson = new Gson();
+                    Type collectionType = new TypeToken<List<GridView>>() { }.getType();
+                    datas = gson.fromJson(arrayResults, collectionType);
+                    datas = gson.fromJson(arrayResults, collectionType);
+                }
+                callback.onGetRestlt(datas);
+            }
+
+            public void onFail(Exception ex) {
+                callback.onFail(ex);
+            }
+        });
+    }
+
+
     //收集活動相關圖片
     public void GetActivityPicInfo(final GetActivityPicInfoResponse callback){
         GetJson("https://projectnull.000webhostapp.com/Image/ActivityImageUrl.json", new CallbackResponse() {
@@ -219,8 +245,8 @@ public class OpenDataService {
             }
         });
     }
-
-    public interface CallbackResponse {
+  
+  public interface CallbackResponse {
         void onResponse(String result);
         void onFail(Exception ex);
     }
@@ -231,8 +257,8 @@ public class OpenDataService {
     }
 
     public interface GetHotelResponse{
-        void onGetRestlt(ArrayList<Hotel> picResult);
-        void onFail(Exception ex);
+       void onGetRestlt(ArrayList<Hotel> result);
+       void onFail(Exception ex);
     }
 
     public interface GetHotelPicResponse{
@@ -247,6 +273,10 @@ public class OpenDataService {
 
     public interface GetActivityPicInfoResponse{
         void onGetRestlt(ArrayList<ActivityInfo> picResult);
+        void onFail(Exception ex);
+    }
+    public interface GetGridViewResponse{
+        void onGetRestlt(ArrayList<GridView> result);
         void onFail(Exception ex);
     }
 }

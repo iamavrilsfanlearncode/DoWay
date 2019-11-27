@@ -16,7 +16,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.List;
+
 import nullteam.com.doway.MyFavorite.MyFavoriteActivity;
+import nullteam.com.doway.model.Restaurant;
 
 public class MainActivity extends AppCompatActivity {
 

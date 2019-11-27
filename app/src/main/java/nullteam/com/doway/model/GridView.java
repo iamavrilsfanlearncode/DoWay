@@ -2,7 +2,7 @@ package nullteam.com.doway.model;
 
 import java.io.Serializable;
 
-public class Restaurant implements Serializable {
+public class GridView implements Serializable {
     /**
      * OPEN API :  https://data.gov.tw/dataset/7778
      * ID : 01_100
@@ -58,7 +58,7 @@ public class Restaurant implements Serializable {
     private String Coordinate;
     private String PicURL;
 
-    public Restaurant(String ID, String name, String address, String tel, String picURL) {
+    public GridView(String ID, String name, String address, String tel, String picURL) {
         this.ID = ID;
         this.Name = name;
         this.Address = address;

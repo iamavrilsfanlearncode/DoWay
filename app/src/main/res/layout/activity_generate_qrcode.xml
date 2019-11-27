@@ -4,30 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QRCode.ShowQRCode">
+    tools:context=".QRCode.GenerateQRCode">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingTop="100dp"
+        android:paddingTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/qrCodeShow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/myQRCode"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             android:layout_gravity="center_horizontal" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/scan_qrcode" />
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/edit_url" />
+
+        <EditText
+            android:id="@+id/edtUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/https" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,7 +47,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
-
 
             <Button
                 android:id="@+id/BtnBack"
@@ -51,9 +62,21 @@
                 android:text="@string/BtnBack"
                 android:textColor="@color/green" />
 
+            <Button
+                android:id="@+id/BtnGenerate"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gradual2"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="@string/generate_qrcode"
+                android:textColor="@color/white" />
+
         </LinearLayout>
-
-
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,13 +3,22 @@ package nullteam.com.doway.QRCode;
 import androidx.appcompat.app.AppCompatActivity;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.google.zxing.BarcodeFormat;
+
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+
+import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
 
 public class ShowQRCode extends AppCompatActivity {
     ImageView qrCode_show;
+    Button btnBack;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,18 @@ public class ShowQRCode extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        btnBack = findViewById(R.id.BtnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 跳回首頁
+                intent = new Intent();
+                intent.setClass(ShowQRCode.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 }

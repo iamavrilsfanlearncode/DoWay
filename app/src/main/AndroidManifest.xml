@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_nulllogo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QRCode.ShowQRCode"></activity>
+        <activity android:name=".QRCode.GenerateQRCode"></activity>
+        <activity android:name=".QRCode.ShowQRCode" />
         <activity android:name=".MyFavorite.MyFavoriteActivity" />
         <activity
             android:name=".MainActivity"

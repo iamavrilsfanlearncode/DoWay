@@ -258,8 +258,7 @@ public class OpenDataService {
 
     public interface GetHotelResponse{
        void onGetRestlt(ArrayList<Hotel> result);
-        void onGetRestlt(ArrayList<Hotel> picResult);
-        void onFail(Exception ex);
+       void onFail(Exception ex);
     }
 
     public interface GetHotelPicResponse{
@@ -275,7 +274,8 @@ public class OpenDataService {
     public interface GetActivityPicInfoResponse{
         void onGetRestlt(ArrayList<ActivityInfo> picResult);
         void onFail(Exception ex);
-    }public interface GetGridViewResponse{
+    }
+    public interface GetGridViewResponse{
         void onGetRestlt(ArrayList<GridView> result);
         void onFail(Exception ex);
     }

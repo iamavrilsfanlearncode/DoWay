@@ -1,5 +1,6 @@
 package nullteam.com.doway.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import nullteam.com.doway.QRCode.ShowQRCode;
 import nullteam.com.doway.R;
 
 public class AboutFragment extends Fragment {
@@ -57,7 +60,10 @@ public class AboutFragment extends Fragment {
             // 掃描 APP 的 QR Code 取得原始碼
             @Override
             public void onClick(View v) {
-
+                intent = new Intent();
+                intent.setClass(v.getContext(), ShowQRCode.class);
+                startActivity(intent);
+                ((Activity) v.getContext()).finish(); // 強制轉型
             }
         });
 

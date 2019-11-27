@@ -42,4 +42,14 @@ dependencies {
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     // Glide
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+    // 把 QR code 產生器需要用到的函式庫匯入到專案當中
+    implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.zxing:core:3.3.0'
+    //--- END
+    //---生成自己的 QRCode 到畫面上
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    //--- END
 }

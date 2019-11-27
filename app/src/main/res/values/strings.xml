@@ -25,4 +25,5 @@
     <string name="email_lula">windandsprings@gmail.com</string>
     <string name="email_george">georgecycuphy@cycu.org.tw</string>
     <string name="email_polly">yupollys654020@gmai.com</string>
+    <string name="scan_qrcode">☝ 掃描 QR Code 取得 APP 程式原始碼 ☝</string>
 </resources>

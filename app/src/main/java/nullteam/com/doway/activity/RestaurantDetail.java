@@ -14,6 +14,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.MyFavorite.MyFavDbAdapter;
 import nullteam.com.doway.R;
+import nullteam.com.doway.model.GridView;
 import nullteam.com.doway.model.Restaurant;
 
 public class RestaurantDetail extends AppCompatActivity {
@@ -28,12 +29,18 @@ public class RestaurantDetail extends AppCompatActivity {
     String my_fav_name;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_detail);
 
         restaurant = (Restaurant)getIntent().getSerializableExtra("restaurant");
+
+
+
+
+
         tv_Tel = findViewById(R.id.Tel);
         tv_Name = findViewById(R.id.Subject);
         tv_Address =findViewById(R.id.Address);

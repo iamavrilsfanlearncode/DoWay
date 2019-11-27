@@ -9,4 +9,6 @@
     <string name="MyFavorite">我的收藏</string>
     <string name="title_homepage">首頁</string>
     <string name="noData">尚無收藏項目</string>
+    <string name="about">關於</string>
+    <string name="about_doway">關於【兜we】</string>
 </resources>

@@ -7,15 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
-
+import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
-
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.ActivityInfoDetail;
 import nullteam.com.doway.model.ActivityInfo;
@@ -49,7 +46,7 @@ public class ActivityInfoAdapter extends RecyclerView.Adapter<ActivityInfoAdapte
 
         //取得datasourceunit文字
         holder.dsuTextView.setText(datas.get(position).getDatasourceunit());
-        //如果URL不為空，就顯示從URL載下來的圖片
+         //如果URL不為空，就顯示從URL載下來的圖片
         try{
             if (!data.getImageUrl().isEmpty()){
                 ImageLoader imageLoader = ImageLoader.getInstance();

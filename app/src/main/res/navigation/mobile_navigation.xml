@@ -28,4 +28,11 @@
         android:name="nullteam.com.doway.fragment.ActivityInfoFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_activityinfo" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="nullteam.com.doway.fragment.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about" />
+
 </navigation>

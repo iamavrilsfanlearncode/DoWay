@@ -47,19 +47,19 @@ public class MyFavoriteActivity extends AppCompatActivity {
         }
         displayList(); // 顯示所有收藏資料
 
-        // 跳到各筆資料的詳細頁
-        myFavList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                cursor.move(position);
-                item_id = cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_ID));
-
-                intent = new Intent();
-                intent.putExtra("item_id", item_id);
-                intent.setClass(MyFavoriteActivity.this, RestaurantDetail.class);
-                startActivity(intent);
-            }
-        });
+//        // 跳到各筆資料的詳細頁
+//        myFavList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                cursor.move(position);
+//                item_id = cursor.getString(cursor.getColumnIndex(MyFavDbAdapter.KEY_ID));
+//
+//                intent = new Intent();
+//                intent.putExtra("item_id", item_id);
+//                intent.setClass(MyFavoriteActivity.this, RestaurantDetail.class);
+//                startActivity(intent);
+//            }
+//        });
 
         // 移除收藏
         myFavList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

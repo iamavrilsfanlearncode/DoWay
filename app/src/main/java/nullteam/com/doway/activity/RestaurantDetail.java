@@ -27,6 +27,7 @@ public class RestaurantDetail extends AppCompatActivity {
     Cursor lists;
     boolean isExists = false;
     String my_fav_name;
+    int item_id;
 
 
 
@@ -74,6 +75,10 @@ public class RestaurantDetail extends AppCompatActivity {
         myFavDbAdapter = new MyFavDbAdapter(this);
         lists = myFavDbAdapter.listMyFavRestaurant();
 
+        // 先確認該筆資料有沒有加入收藏，有的話愛心要顯示紅色，沒有的話，愛心就要是透明的
+        checkFavorite(lists, restaurant.getName());
+
+        // 收藏按鈕的點擊事件
         btn_Favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +87,20 @@ public class RestaurantDetail extends AppCompatActivity {
         });
     }
 
+    // 先確認該筆資料有沒有加入收藏，有的話愛心要顯示紅色，沒有的話，愛心就要是透明的
+    private void checkFavorite(Cursor lists, String name_restaurant) {
+
+        for(int i =0;i<lists.getCount();i++){
+            my_fav_name = lists.getString(lists.getColumnIndexOrThrow("name_restaurant"));
+
+            if (name_restaurant.equals(my_fav_name)){
+                btn_Favorite.setBackgroundResource(R.drawable.like);
+            }
+            lists.moveToNext();
+        }
+    }
+
+    // 收藏按鈕的點擊事件
     public void addFavorite(Restaurant restaurant, Cursor lists, String name_restaurant){
         lists.moveToFirst(); // 不加這句的話，收藏後馬上再按收藏，會閃退
         for (int i = 0; i < lists.getCount(); i++) {

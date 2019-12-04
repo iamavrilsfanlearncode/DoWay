@@ -5,22 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
-
 import java.util.ArrayList;
-import java.util.stream.Collectors;
-
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.RestaurantDetail;
 import nullteam.com.doway.model.Restaurant;
@@ -39,7 +32,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         this.datas = datas;
         this.datasFiltered = datas;
     }
-
 
     @NonNull
     @Override
@@ -65,7 +57,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
             ImageLoader imageLoader = ImageLoader.getInstance();
             imageLoader.displayImage(data.getPicURL(), holder.picImageView);
         }
-
     }
 
     @Override
@@ -127,7 +118,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 			cityTextView = view.findViewById(R.id.City);
             but_detail = view.findViewById(R.id.BtnDetail);
 
-
             //跳至詳細頁的點擊事件
             but_detail.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -141,9 +131,5 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
                 }
             });//跳至詳細頁 END
         }
-
-
-
-
     }// ViewHolder extends RecyclerView.ViewHolder   END
 }//RestaurantAdapter END

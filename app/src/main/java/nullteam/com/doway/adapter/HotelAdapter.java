@@ -7,15 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
-
 import java.util.ArrayList;
-
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.HotelDetail;
 import nullteam.com.doway.model.Hotel;
@@ -98,5 +94,4 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>{
             });//跳至詳細頁 END
         }
     }
-
 }

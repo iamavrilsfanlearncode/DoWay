@@ -7,11 +7,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
-
 import nullteam.com.doway.MainActivity;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.Hotel;
@@ -69,6 +66,4 @@ public class HotelDetail extends AppCompatActivity {
             }
         });
     }
-
-
 }

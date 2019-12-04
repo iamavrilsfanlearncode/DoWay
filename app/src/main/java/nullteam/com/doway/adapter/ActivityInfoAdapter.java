@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.ActivityInfoDetail;

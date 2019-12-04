@@ -5,21 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
-
 import nullteam.com.doway.OpenDataService;
 import nullteam.com.doway.R;
 import nullteam.com.doway.Utils.DialogHelper;
 import nullteam.com.doway.adapter.ActivityInfoAdapter;
-
 import nullteam.com.doway.model.ActivityInfo;
-
 
 public class ActivityInfoFragment extends Fragment {
     private RecyclerView listView;

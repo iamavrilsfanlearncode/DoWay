@@ -1,32 +1,26 @@
 package nullteam.com.doway;
 
 import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
-
 import org.jetbrains.annotations.NotNull;
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import nullteam.com.doway.model.ActivityInfo;
 import nullteam.com.doway.model.GridView;
 import nullteam.com.doway.model.Hotel;
 import nullteam.com.doway.model.Restaurant;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
 import static android.content.ContentValues.TAG;
 
 // 負責發出網路請求，取得OpenData
@@ -104,7 +98,6 @@ public class OpenDataService {
                 }
                 callback.onGetRestlt(datas);
             }
-
             public void onFail(Exception ex) {
                 callback.onFail(ex);
             }
@@ -128,14 +121,13 @@ public class OpenDataService {
                 }
                 callback.onGetRestlt(datas);
             }
-
             public void onFail(Exception ex) {
                 callback.onFail(ex);
             }
         });
     }
 
-//收集旅館相關圖片
+    //收集旅館相關圖片
     public void GetPicHotel(final GetHotelPicResponse callback){
         GetJson("https://projectnull.000webhostapp.com/Image/HotelImageUrl.json",new CallbackResponse(){
             @Override
@@ -186,14 +178,11 @@ public class OpenDataService {
                     callback.onFail(ex);
                 }
             }
-
             public void onFail(Exception ex) {
                 callback.onFail(ex);
             }
         });
     }
-
-
 
     public void GetGridView(final  GetGridViewResponse callback) {
         GetJson("http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx", new CallbackResponse() {
@@ -209,13 +198,11 @@ public class OpenDataService {
                 }
                 callback.onGetRestlt(datas);
             }
-
             public void onFail(Exception ex) {
                 callback.onFail(ex);
             }
         });
     }
-
 
     //收集活動相關圖片
     public void GetActivityPicInfo(final GetActivityPicInfoResponse callback){
@@ -246,7 +233,7 @@ public class OpenDataService {
         });
     }
   
-  public interface CallbackResponse {
+    public interface CallbackResponse {
         void onResponse(String result);
         void onFail(Exception ex);
     }

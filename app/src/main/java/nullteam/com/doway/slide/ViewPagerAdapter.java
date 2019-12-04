@@ -6,18 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 import nullteam.com.doway.R;
-import nullteam.com.doway.model.Restaurant;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewHolder> { ;
@@ -39,14 +31,12 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context).load(list.get(position%list.size())).into(holder.imageView);
-
     }
 
     @Override
     public int getItemCount() {
         return Integer.MAX_VALUE;
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;

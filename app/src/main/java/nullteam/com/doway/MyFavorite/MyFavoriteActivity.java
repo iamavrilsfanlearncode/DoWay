@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import nullteam.com.doway.R;
-import nullteam.com.doway.activity.RestaurantDetail;
 import nullteam.com.doway.model.Restaurant;
 
 public class MyFavoriteActivity extends AppCompatActivity {

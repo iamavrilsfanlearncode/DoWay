@@ -1,31 +1,20 @@
 package nullteam.com.doway.slide;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
-
 import java.util.ArrayList;
-
 import nullteam.com.doway.R;
 import nullteam.com.doway.activity.GridviewDetail;
-import nullteam.com.doway.activity.RestaurantDetail;
-import nullteam.com.doway.adapter.RestaurantAdapter;
 import nullteam.com.doway.model.GridView;
-import nullteam.com.doway.model.Restaurant;
 
 public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
     private ArrayList<GridView> datas;
@@ -45,7 +34,6 @@ public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
         return vh;
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         GridView data = datas.get(position);
@@ -56,8 +44,6 @@ public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
             ImageLoader imageLoader = ImageLoader.getInstance();
             imageLoader.displayImage(datas.get(position).getPicURL(), holder.btn_detail);
         }
-
-
     }
 
     @Override
@@ -67,7 +53,6 @@ public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
         this.datas = datas;
         notifyDataSetChanged();
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
@@ -91,9 +76,6 @@ public class CustomGrid extends RecyclerView.Adapter<CustomGrid.ViewHolder> {
                     mFragment.getActivity().startActivity(intent);
                 }
             });
-
-
-
         }
     }
 }

@@ -1,7 +1,6 @@
 package nullteam.com.doway.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class ActivityInfo implements Serializable {
 

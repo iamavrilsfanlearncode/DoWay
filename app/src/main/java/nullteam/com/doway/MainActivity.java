@@ -5,21 +5,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import java.util.List;
-
 import nullteam.com.doway.MyFavorite.MyFavoriteActivity;
-import nullteam.com.doway.model.Restaurant;
 
 public class MainActivity extends AppCompatActivity {
 

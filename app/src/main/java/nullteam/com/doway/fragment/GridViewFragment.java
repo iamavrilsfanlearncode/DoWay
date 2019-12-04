@@ -5,26 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
 import nullteam.com.doway.OpenDataService;
 import nullteam.com.doway.R;
 import nullteam.com.doway.Utils.DialogHelper;
 import nullteam.com.doway.model.GridView;
-import nullteam.com.doway.model.Restaurant;
 import nullteam.com.doway.slide.CustomGrid;
 import nullteam.com.doway.slide.SmoothLinearLayoutManager;
 import nullteam.com.doway.slide.ViewPagerAdapter;
@@ -34,8 +29,6 @@ public class GridViewFragment extends Fragment {
     RecyclerView listview;
     GridLayoutManager layoutManager;
     private CustomGrid adapter;
-
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -78,10 +71,9 @@ public class GridViewFragment extends Fragment {
             }
         });
 
-
-       list.add(R.drawable.aaa);
-       list.add(R.drawable.b);
-       list.add(R.drawable.c);
+        list.add(R.drawable.aaa);
+        list.add(R.drawable.b);
+        list.add(R.drawable.c);
 
         final ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity(),list);
         final RecyclerView recyclerView = root.findViewById(R.id.recycler);
@@ -91,17 +83,16 @@ public class GridViewFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.scrollToPosition(list.size() * 10);
 
-       PagerSnapHelper snapHelper = new PagerSnapHelper();
-       snapHelper.attachToRecyclerView(recyclerView);
+        PagerSnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
 
-       ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
-       scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
+        scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                recyclerView.smoothScrollToPosition(layoutManager.findFirstVisibleItemPosition() + 1);
             }
         }, 2000, 2000, TimeUnit.MILLISECONDS);
-
 
         return root;
     }

@@ -1,25 +1,16 @@
 package nullteam.com.doway.activity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
-
 import nullteam.com.doway.MainActivity;
-import nullteam.com.doway.MyFavorite.MyFavDbAdapter;
 import nullteam.com.doway.R;
 import nullteam.com.doway.model.GridView;
-import nullteam.com.doway.model.Restaurant;
-
 
 public class GridviewDetail extends AppCompatActivity {
     private GridView gridView;
@@ -30,18 +21,12 @@ public class GridviewDetail extends AppCompatActivity {
 //    private MyFavDbAdapter myFavDbAdapter;
 //    Cursor lists;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gridview_detail);
 
         gridView = (GridView) getIntent().getSerializableExtra("grid");
-
-
-
-
 
         tv_Tel = findViewById(R.id.Tel);
         tv_Name = findViewById(R.id.Subject);
